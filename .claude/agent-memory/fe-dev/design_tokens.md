@@ -19,6 +19,8 @@ Colors:
 - `--color-heading`: #0d3127 — very dark green, used on h1/h2
 - `--color-accent`: #0f8a8d — teal, used for highlighted text and h3
 - `--color-pink`: #f2188f — hot pink, for badge/label text only (not the main accent)
+- `--color-muted`: #4e655f — muted body/secondary text; use `text-muted`
+- `--color-warm`: #fffaf3 — warm off-white background; use `bg-warm`
 
 Font:
 - `--font-sans`: var(--font-plus-jakarta-sans) — Plus Jakarta Sans via next/font/google, CSS var injected at <html> in layout.tsx
@@ -29,11 +31,11 @@ Font:
 ## @layer base (element defaults)
 - h1: text-4xl font-bold leading-tight tracking-tight text-heading sm:text-5xl
 - h2: text-4xl font-bold leading-tight text-heading
-- h3: text-3xl font-bold leading-[1.3] text-accent (note: uses arbitrary leading-[1.3])
+- h3: text-3xl font-bold leading-heading text-accent (`--leading-heading: 1.3` token in @theme inline)
 
 ## Global HTML overrides
 - html: font-size 15px mobile / 16px at ≥1024px; overflow-x hidden
-- body: opacity 0 on load (GSAP animates in); overflow hidden
+- body: opacity 0 on load (GSAP animates in); overflow hidden. A `@media (prefers-reduced-motion: reduce)` rule sets opacity 1 !important as a CSS fallback.
 
 ## Named global classes (plain CSS)
 - .container: mx-auto px-0; max-width 1280px (overrides Tailwind default)

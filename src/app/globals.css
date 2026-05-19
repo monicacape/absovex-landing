@@ -13,6 +13,9 @@
   --color-heading: #0d3127;
   --color-accent: #0f8a8d;
   --color-pink: #f2188f;
+  --color-muted: #4e655f;
+  --color-warm: #fffaf3;
+  --leading-heading: 1.3;
 }
 
 @utility rounded-card {
@@ -30,6 +33,12 @@ body {
   font-family: var(--font-plus-jakarta-sans), sans-serif;
   opacity: 0;
   overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    opacity: 1 !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -53,14 +62,8 @@ body {
     @apply text-4xl font-bold leading-tight text-heading;
   }
   h3 {
-    @apply text-3xl font-bold leading-[1.3] text-accent;
+    @apply text-3xl font-bold leading-heading text-accent;
   }
-}
-
-.pop-2-line,
-.pop-3-line,
-.pop-4-line {
-  opacity: 0;
 }
 
 .container {

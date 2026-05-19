@@ -40,7 +40,7 @@ export default function FAQ() {
               <br />
               <span className="text-[#3f9d9a]">understanding the results?</span>
             </h2>
-            <p className="line-animate text-lg font-medium leading-8 text-[#4e655f]">
+            <p className="line-animate text-lg font-medium leading-8 text-muted">
               After you unlock your report, you can ask follow-up questions to
               better understand what changed, what matters most, and what to ask
               your doctor.
@@ -94,7 +94,7 @@ export default function FAQ() {
               />
             </button>
             {open === i && faq.answer && (
-              <p className="mt-2.5 text-base leading-6 text-[#4e655f]">
+              <p className="mt-2.5 text-base leading-6 text-muted">
                 {faq.answer}
               </p>
             )}

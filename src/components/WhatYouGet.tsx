@@ -56,7 +56,7 @@ export default function WhatYouGet() {
             <br className="hidden lg:block" />
             <span className="text-[#0f8a8d]">Clear answers.</span>
           </h2>
-          <p className="line-animate text-lg font-medium leading-8 text-[#4e655f]">
+          <p className="line-animate text-lg font-medium leading-8 text-muted">
             Your report shows where your current routine may be working against
             you, then turns it into a simpler plan you can use right away.
           </p>
@@ -77,7 +77,7 @@ export default function WhatYouGet() {
               <p className="text-lg font-bold leading-6 text-[#0f8a8d]">
                 {item.title}
               </p>
-              <p className="text-sm leading-6 text-[#4e655f]">
+              <p className="text-sm leading-6 text-muted">
                 {item.description}
               </p>
             </div>

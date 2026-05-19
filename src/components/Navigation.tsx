@@ -130,7 +130,7 @@ export default function Navigation() {
 
       {/* Full-screen menu overlay */}
       {menuOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-[#fffaf3] lg:hidden top-16 px-10">
+        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-warm lg:hidden top-16 px-10">
           <ul className="flex flex-col items-center gap-8">
             {links.map(({ href, label }) => (
               <li key={href}>

@@ -2,7 +2,6 @@
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import EyebrowBadge from "@/components/EyebrowBadge";
 
 const stats = [
@@ -51,7 +50,7 @@ export default function Statistics() {
             Taking multiple <br className="hidden lg:block" />
             <span className="text-[#0f8a8d]">medications and supplements?</span>
           </h2>
-          <p className="line-animate text-lg font-medium leading-8 text-[#4e655f] split-animate">
+          <p className="line-animate text-lg font-medium leading-8 text-muted split-animate">
             Timing, food, beverages, minerals, and supplements can affect how
             medications work more than most people realize.
           </p>
@@ -68,7 +67,7 @@ export default function Statistics() {
               <p className="text-xl font-bold leading-tight text-[#0d3127]">
                 {stat.title}
               </p>
-              <p className="text-base leading-6 text-[#4e655f]">
+              <p className="text-base leading-6 text-muted">
                 {stat.description}
               </p>
             </div>
@@ -80,7 +79,7 @@ export default function Statistics() {
                   alt=""
                   className="mt-0.5 size-5 shrink-0"
                 />
-                <p className="text-base leading-6 text-[#4e655f]">
+                <p className="text-base leading-6 text-muted">
                   {stat.source}
                 </p>
               </div>

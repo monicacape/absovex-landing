@@ -22,7 +22,7 @@ export default function Why29() {
                   A practical first step before your next doctor or pharmacist
                   conversation.
                 </h3>
-                <p className="text-base leading-8 text-[#4e655f] lg:pr-20">
+                <p className="text-base leading-8 text-muted lg:pr-20">
                   Absovex helps you get organized first. You can spot possible
                   timing issues, understand what may be clashing, and show up
                   with better questions and a clearer picture of your routine.
@@ -37,7 +37,7 @@ export default function Why29() {
                   Get My $29 Report
                 </Button>
               </div>
-              <p className="text-sm leading-8 text-[#4e655f]">
+              <p className="text-sm leading-8 text-muted">
                 *For $29, you get a personalized first pass you can use right
                 away.
               </p>

@@ -8,7 +8,7 @@ export default function Score() {
         <h3 className="text-2xl text-[#0f7e7b]">
           See where your routine stands now, and where it improves.
         </h3>
-        <p className="text-base leading-6 text-[#4e655f] relative">
+        <p className="text-base leading-6 text-muted relative">
           Absovex gives your current routine a score, then shows how it improves
           once timing, spacing, and food conflicts are cleaned up
           <span className="absolute inset-0 w-full h-full bg-white blur-[4px] -z-10"></span>
@@ -33,7 +33,7 @@ export default function Score() {
           height={110}
           className="w-full max-w-[360px]"
         />
-        <p className="text-xs leading-normal text-[#4e655f] relative">
+        <p className="text-xs leading-normal text-muted relative">
           *Your score reflects how well your routine supports spacing, food
           timing, and absorption.
           <span className="absolute inset-0 w-full h-full bg-white blur-[4px] -z-10"></span>

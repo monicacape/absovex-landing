@@ -43,6 +43,8 @@ const steps = [
   },
 ];
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function HowItWorks() {
   useGSAP(() => {
     gsap.from(".how-cards .card", {
@@ -69,7 +71,7 @@ export default function HowItWorks() {
             <br className="hidden lg:block" />
             <span className="text-[#0f8a8d]">We sort out the rest.</span>
           </h2>
-          <p className="line-animate text-lg font-medium leading-8 text-[#4e655f] split-animate">
+          <p className="line-animate text-lg font-medium leading-8 text-muted split-animate">
             Add your meds, supplements, and daily routine. Absovex checks how
             they work together and builds a report with the issues it finds, the
             changes it suggests, and the reasoning behind them.
@@ -78,7 +80,7 @@ export default function HowItWorks() {
       </div>
 
       {/* Steps */}
-      <div className="flex w-full xl:max-w-3/4 flex-col gap-12 lg:gap-20">
+      <div className="how-cards flex w-full xl:max-w-3/4 flex-col gap-12 lg:gap-20">
         {steps.map((step, i) => {
           const imageRight = i % 2 === 0;
 
@@ -93,7 +95,7 @@ export default function HowItWorks() {
                 <p className="text-2xl font-bold text-[#0d3127] word-animate">
                   {step.title}
                 </p>
-                <p className="text-lg font-medium leading-8 text-[#4e655f] line-animate">
+                <p className="text-lg font-medium leading-8 text-muted line-animate">
                   {step.description}
                 </p>
                 {step.cta && (
@@ -109,7 +111,7 @@ export default function HowItWorks() {
 
           const imageBlock = (
             <div
-              className="relative flex-1 overflow-hidden rounded-card px-4 lg:px-8 lg:h-[400px] bg-[#fffaf3] bg-center bg-contain max-w-[580px] max-h-[400px] flex-[1_0_400px] lg:flex-1 card"
+              className="relative flex-1 overflow-hidden rounded-card px-4 lg:px-8 lg:h-[400px] bg-warm bg-center bg-contain max-w-[580px] max-h-[400px] flex-[1_0_400px] lg:flex-1 card"
               style={{ backgroundImage: "url('/tile-cream.png')" }}
             >
               <Image

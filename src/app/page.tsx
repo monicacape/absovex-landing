@@ -1,7 +1,6 @@
 "use client";
 
 import Hero from "@/components/Hero";
-import ProofStrip from "@/components/ProofStrip";
 import Statistics from "@/components/Statistics";
 import HowItWorks from "@/components/HowItWorks";
 import WhatYouGet from "@/components/WhatYouGet";
@@ -18,6 +17,9 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 export default function Home() {
   useGSAP(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
     const words = gsap.utils.toArray<HTMLElement>(".word-animate");
     const lines = gsap.utils.toArray<HTMLElement>(".line-animate");
 
@@ -60,7 +62,6 @@ export default function Home() {
     <div>
       <Hero />
       <div className="container">
-        <ProofStrip></ProofStrip>
         <Statistics></Statistics>
         <HowItWorks></HowItWorks>
         <WhatYouGet></WhatYouGet>
