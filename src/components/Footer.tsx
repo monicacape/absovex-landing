@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FinalCTA from "./FinalCTA";
+import FinalCTA from "@/components/Home/FinalCTA";
 
 const navLinks = {
   Product: [

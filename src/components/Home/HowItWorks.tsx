@@ -2,7 +2,6 @@
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import EyebrowBadge from "@/components/EyebrowBadge";
 import Button from "@/components/Button";
@@ -43,10 +42,9 @@ const steps = [
   },
 ];
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function HowItWorks() {
   useGSAP(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     gsap.from(".how-cards .card", {
       opacity: 0,
       y: 40,
@@ -86,7 +84,7 @@ export default function HowItWorks() {
 
           const textBlock = (
             <div
-              className={`flex flex-col gap-5 py-5] flex-1 items-center lg:items-start ${imageRight ? "lg:pr-10" : "lg:pl-10"}`}
+              className={`flex flex-col gap-5 py-5 flex-1 items-center lg:items-start ${imageRight ? "lg:pr-10" : "lg:pl-10"}`}
             >
               <span className="text-2xl font-bold text-pink">
                 <span className="relative -top-0.5">/</span> {step.number}

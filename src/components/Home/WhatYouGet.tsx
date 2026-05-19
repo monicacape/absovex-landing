@@ -7,14 +7,14 @@ const items = [
     iconClass: "size-10",
     title: "What may be clashing",
     description:
-      "See food, coffee, mineral, and timing conflicts in one place.",
+      "See how food, drinks, minerals, supplements, and timing may be affecting your routine.",
   },
   {
     icon: "/icons/move.svg",
     iconClass: "size-10",
     title: "What to move",
     description:
-      "Know what should be taken with food, away from coffee, or apart from other items.",
+      "Know what should be taken with food, away from drinks, or separated from other supplements and medications.",
   },
   {
     icon: "/icons/calendar.svg",
@@ -32,8 +32,8 @@ const items = [
   {
     icon: "/icons/doctor.svg",
     iconClass: "size-10",
-    title: "Questions for your doctor",
-    description: "Bring better notes and better questions to your next visit.",
+    title: "Questions for your provider",
+    description: "Bring better notes and better questions to your next doctor or pharmacist visit.",
   },
   {
     icon: "/icons/bulb.svg",
@@ -70,7 +70,7 @@ export default function WhatYouGet() {
             key={item.title}
             className="card flex flex-col items-center gap-4 rounded-card border border-stroke bg-white/60 px-6 py-6 md:py-10 text-center shadow-card-lg backdrop-blur"
           >
-            <div className="flex size-20 items-center justify-center rounded-lg bg-cream-bg p-icon-pad shrink-0">
+            <div className="flex size-20 items-center justify-center rounded-lg bg-icon-bg p-icon-pad shrink-0">
               <img src={item.icon} alt="" className={item.iconClass} />
             </div>
             <div className="flex flex-col gap-1">

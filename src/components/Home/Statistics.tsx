@@ -2,11 +2,8 @@
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import EyebrowBadge from "@/components/EyebrowBadge";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
   {
@@ -68,6 +65,7 @@ const agencies = [
 
 export default function Statistics() {
   useGSAP(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     gsap.from(".stats-cards .card", {
       opacity: 0,
       y: 40,
@@ -142,7 +140,7 @@ export default function Statistics() {
           Your report is built using trusted medication and supplement timing
           guidance from:
         </p>
-        <div className="flex justify-between items-center w-full">
+        <div className="flex flex-wrap justify-between items-center w-full gap-8">
           {agencies.map((agency) => (
             <div key={agency.name} className="flex gap-5 items-center">
               <Image

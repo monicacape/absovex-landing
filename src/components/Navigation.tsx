@@ -24,6 +24,7 @@ export default function Navigation() {
 
   useGSAP(
     () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       gsap.from(navRef.current, {
         y: -20,
         opacity: 0,
@@ -52,15 +53,6 @@ export default function Navigation() {
               unoptimized
               className="w-logo xl:w-logo-xl"
             />
-            {/* <Image
-              src="/logo-icon.png"
-              alt="Absovex"
-              width={22}
-              height={20}
-              priority
-              unoptimized
-              className="block md:hidden"
-            /> */}
           </Link>
         </div>
 
@@ -89,6 +81,8 @@ export default function Navigation() {
 
           {/* Menu toggle — shown below lg */}
           <button
+            type="button"
+            aria-expanded={menuOpen}
             className="flex lg:hidden items-center justify-center size-12 rounded-card border border-stroke bg-white/60 backdrop-blur-sm"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}

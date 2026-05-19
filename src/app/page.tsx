@@ -1,23 +1,24 @@
 "use client";
 
-import Hero from "@/components/Hero";
-import Statistics from "@/components/Statistics";
-import HowItWorks from "@/components/HowItWorks";
-import WhatYouGet from "@/components/WhatYouGet";
-import Why29 from "@/components/Why29";
-import Score from "@/components/Score";
-import WhyTrust from "@/components/WhyTrust";
-import FAQ from "@/components/FAQ";
+import Hero from "@/components/Home/Hero";
+import Statistics from "@/components/Home/Statistics";
+import WhatYouGet from "@/components/Home/WhatYouGet";
+import Why29 from "@/components/Home/Why29";
+import FAQ from "@/components/Home/FAQ";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
+import Built from "@/components/Home/Built";
+import Insights from "@/components/Home/Insights";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 export default function Home() {
   useGSAP(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (prefersReduced) return;
 
     const words = gsap.utils.toArray<HTMLElement>(".word-animate");
@@ -62,15 +63,14 @@ export default function Home() {
     <div>
       <Hero />
       <div className="container">
-        <Statistics></Statistics>
-        <HowItWorks></HowItWorks>
-        <WhatYouGet></WhatYouGet>
-        <div className="lg:flex gap-x-10 py-12 lg:py-20">
-          <Why29></Why29>
-          <Score></Score>
-        </div>
-        <WhyTrust></WhyTrust>
-        <FAQ></FAQ>
+        <Statistics />
+        <Why29 />
+        <WhatYouGet />
+      </div>
+      <Built />
+      <div className="container">
+        <Insights />
+        <FAQ />
       </div>
     </div>
   );

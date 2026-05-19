@@ -1,5 +1,5 @@
 import EyebrowBadge from "@/components/EyebrowBadge";
-import GreenAbsorb from "./GreenAbsorb";
+import GreenAbsorb from "@/components/GreenAbsorb";
 
 export default function WhyTrust() {
   return (
@@ -21,7 +21,7 @@ export default function WhyTrust() {
 
           <div className="flex items-start gap-3">
             <p className="text-lg leading-8 text-muted text-center lg:text-left">
-              <span className="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white inline-flex mr-2">
+              <span className="mt-1 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white mr-2">
                 !
               </span>
               <strong className="font-bold">Medical Disclaimer</strong>: Absovex

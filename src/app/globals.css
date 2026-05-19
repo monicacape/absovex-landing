@@ -19,6 +19,13 @@
 
   --color-icon-bg: #e8f7f7;
   --color-icon-border: #a7d2d2;
+  --color-icon-bg-purple: #f5f4f9;
+  --color-icon-border-purple: #dacaff;
+  --color-icon-bg-blue: #e8f0ff;
+  --color-icon-border-blue: #cbd9f2;
+  --color-icon-bg-rose: #fdebf1;
+  --color-icon-border-rose: #ffd6e2;
+  --color-border-amber: #ffe0c4;
   --color-badge-bg: #fee3e9;
   --color-cream-bg: #fff7eb;
   --color-shadow-teal: #9ab0b1;
@@ -69,10 +76,19 @@
   --inset-absorb-top: -24%;
 
   --flex-step-img: 1 0 25rem;
+
+  --font-size-32: 2rem;
+  --width-built-col: 22.875rem;
+  --height-card-gradient: 17.8125rem;
+  --height-card-screenshot: 17.125rem;
 }
 
 @utility rounded-card {
   border-radius: 14px;
+}
+
+@utility top-nav {
+  padding-top: var(--height-nav);
 }
 
 html {
