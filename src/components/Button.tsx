@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-type ButtonVariant = "default" | "secondary";
+type ButtonVariant = "default" | "secondary" | "pink";
 
 interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: ButtonVariant;
@@ -22,11 +22,13 @@ export default function Button({
   const variants: Record<ButtonVariant, string> = {
     default: "bg-accent text-white",
     secondary: "bg-white text-pink",
+    pink: "bg-pink text-white",
   };
 
   const shadowColor: Record<ButtonVariant, string> = {
     default: "bg-shadow-teal",
     secondary: "bg-shadow-cream",
+    pink: "bg-shadow-pink",
   };
 
   return (

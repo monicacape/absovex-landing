@@ -123,12 +123,7 @@ export default function Statistics() {
             </div>
             <div className="w-full border-t border-stroke-subtle" />
             <div className="flex items-center gap-2">
-              <Image
-                src="/icons/globe.svg"
-                alt=""
-                width={20}
-                height={20}
-              />
+              <Image src="/icons/globe.svg" alt="" width={20} height={20} />
               <p className="text-xs leading-6 text-muted">{stat.source}</p>
             </div>
           </div>

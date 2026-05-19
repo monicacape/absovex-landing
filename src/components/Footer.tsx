@@ -3,14 +3,14 @@ import FinalCTA from "@/components/Home/FinalCTA";
 
 const navLinks = {
   Product: [
-    { label: "Statistics", href: "#statistics" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "What You Get", href: "#what-you-get" },
-    { label: "Why $29", href: "#why-29" },
-    { label: "Why Trust Us", href: "#why-trust-us" },
-    { label: "FAQ", href: "#faq" },
+    { href: "#why-timing-matters", label: "Why Timing Matters" },
+    { href: "#why-29", label: "Why It’s Worth $29" },
+    { href: "#what-you-get", label: "What You Get" },
+    { href: "#insights", label: "Insights" },
+    { href: "#faq", label: "FAQ" },
   ],
   Company: [
+    { label: "Disclaimer", href: "#terms" },
     { label: "Terms of Service", href: "#terms" },
     { label: "Privacy Policy", href: "#privacy" },
   ],
@@ -46,6 +46,7 @@ export default function Footer() {
             </div>
             <p className="text-sm leading-6 text-muted text-center md:text-left">
               © 2026 ABSOVEX is operated by Extra You, Inc. All rights reserved.
+              Contact Us
             </p>
           </div>
 

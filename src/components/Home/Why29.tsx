@@ -37,7 +37,7 @@ const cards = [
 
 export default function Why29() {
   return (
-    <section className="flex flex-col gap-10 relatize z-10">
+    <section className="flex flex-col gap-10 relatize z-10 py-12 lg:py-20">
       <div className="grid">
         <div className="col-start-1 row-start-1">
           <div

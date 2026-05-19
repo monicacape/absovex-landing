@@ -10,11 +10,10 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 
 const links = [
-  { href: "#statistics", label: "Statistics" },
-  { href: "#how-it-works", label: "How It Works" },
+  { href: "#why-timing-matters", label: "Why Timing Matters" },
+  { href: "#why-29", label: "Why It’s Worth $29" },
   { href: "#what-you-get", label: "What You Get" },
-  { href: "#why-29", label: "Why $29" },
-  { href: "#why-trust-us", label: "Why Trust Us" },
+  { href: "#insights", label: "Insights" },
   { href: "#faq", label: "FAQ" },
 ];
 

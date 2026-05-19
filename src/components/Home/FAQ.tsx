@@ -11,47 +11,57 @@ const faqs = [
   },
   {
     question: "Is this a one-time purchase?",
-    answer: null,
+    answer: "Yes. This is a one-time $29 report. There is no subscription.",
   },
   {
     question: "Can I edit my report if my stack changes?",
-    answer: null,
+    answer:
+      "No. For this first version each report is generated from the information you enter at the time of purchase. If your medications, supplements, meals, or routine change, you would need to create a new report so Absovex can review the updated routine.",
   },
   {
     question: "Should I start using the new schedule right away?",
-    answer: null,
+    answer:
+      "Use the report as an educational guide and review any changes with your doctor, pharmacist, or qualified healthcare professional before changing how you take medications or supplements. Absovex does not replace medical advice.",
   },
   {
     question: "Is my information stored?",
-    answer: null,
+    answer:
+      "No account is required. The health routine details you enter are used only to generate your report. Absovex does not sell or share your health routine information, and your session data is not retained after your report is generated.\n\nYour payment is processed through Stripe, so Absovex does not collect or store your credit card details. Stripe handles the checkout information needed to complete your purchase.",
   },
   {
     question: "Is this medical advice?",
-    answer: null,
+    answer:
+      "No. Absovex provides educational information based on the details you enter. It does not diagnose, treat, prescribe, or replace your doctor or pharmacist.",
   },
   {
     question: "What email should I use at checkout?",
-    answer: null,
+    answer:
+      "Use the email where you want to receive your purchase report and receipt for your purchase.",
   },
   {
     question: "Can I get a refund?",
-    answer: null,
+    answer:
+      "Because this is an instant digital report, all purchases are final. Instant download items are not eligible for returns, exchanges, or cancellations.",
   },
   {
     question: "Can I join the update list?",
-    answer: null,
+    answer:
+      "Yes. You can join the Absovex update list to hear about improvements, future versions, and beta testing opportunities. Your email will not be sold or shared. It will only be used for Absovex-related communication.",
   },
   {
     question: "Can I send feedback or suggest improvements?",
-    answer: null,
+    answer:
+      "Yes. User feedback is welcome, especially while Absovex continues improving. You can share what worked, what felt confusing, or what features you would like to see next by sending us an email at: feedback@absovex.com",
   },
   {
     question: "What if I take prescription medications?",
-    answer: null,
+    answer:
+      "You can include prescription medications in your report, but you should always review timing changes with your doctor or pharmacist before adjusting how you take them.",
   },
   {
     question: "What if Absovex does not recognize something I take?",
-    answer: null,
+    answer:
+      "If an item is not recognized or does not have enough timing guidance, the report may give limited recommendations for that item. You should review those items with your provider.",
   },
 ];
 

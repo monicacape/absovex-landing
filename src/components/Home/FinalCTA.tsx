@@ -28,7 +28,7 @@ export default function FinalCTA() {
             <div className="flex flex-wrap flex-col items-center gap-5 items-center justify-center">
               <div className="relative">
                 <div className="absolute -bottom-2 left-2.5 right-2.5 h-3 rounded-full bg-accent-dark blur-button" />
-                <Button href="#" showArrow hideShadow>
+                <Button href="#" variant="pink" showArrow hideShadow>
                   Get My $29 Report
                 </Button>
               </div>

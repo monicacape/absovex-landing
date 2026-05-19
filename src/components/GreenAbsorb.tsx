@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function GreenAbsorb() {
   return (
-    <div className="absolute shrink-0 scale-[2.4] rotate-[-20deg] aspect-square -left-40 -top-58">
+    <div className="absolute shrink-0 scale-[2.6] rotate-[-20deg] aspect-square -left-40 -top-72">
       <svg
         width="100%"
         height="100%"
