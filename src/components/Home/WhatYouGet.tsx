@@ -33,7 +33,8 @@ const items = [
     icon: "/icons/doctor.svg",
     iconClass: "size-10",
     title: "Questions for your provider",
-    description: "Bring better notes and better questions to your next doctor or pharmacist visit.",
+    description:
+      "Bring better notes and better questions to your next doctor or pharmacist visit.",
   },
   {
     icon: "/icons/bulb.svg",
@@ -45,7 +46,7 @@ const items = [
 
 export default function WhatYouGet() {
   return (
-    <section className="flex flex-col items-center gap-10 py-12 lg:py-20 lg:max-w-10/12 mx-auto relative">
+    <section className="flex flex-col items-center gap-10 py-12 lg:py-20 lg:max-w-10/12 mx-auto relative -z-10">
       {/* Header */}
       <PinkAbsorb></PinkAbsorb>
       <div className="flex max-w-content-sm flex-col items-center gap-5 text-center">
@@ -77,9 +78,7 @@ export default function WhatYouGet() {
               <p className="text-lg font-bold leading-6 text-accent">
                 {item.title}
               </p>
-              <p className="text-sm leading-6 text-muted">
-                {item.description}
-              </p>
+              <p className="text-sm leading-6 text-muted">{item.description}</p>
             </div>
           </div>
         ))}

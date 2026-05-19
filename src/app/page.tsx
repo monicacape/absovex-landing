@@ -60,7 +60,7 @@ export default function Home() {
   });
 
   return (
-    <div>
+    <div className="relative z-10">
       <Hero />
       <div className="container">
         <Statistics />
