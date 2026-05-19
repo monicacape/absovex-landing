@@ -31,8 +31,8 @@ export default function Footer() {
             <div className="flex flex-col items-center text-center md:items-start md:text-left gap-5">
               <Image src="/logo.png" alt="Absovex" width={138} height={32} />
               <div className="flex items-start gap-3 md:pr-20">
-                <p className="text-[14px] leading-6 text-muted">
-                  <span className="mt-1 inline-flex mr-2 size-5 shrink-0 items-center justify-center rounded-full bg-[#0f8a8d] text-[11px] font-bold text-white">
+                <p className="text-sm leading-6 text-muted">
+                  <span className="mt-1 inline-flex mr-2 size-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
                     !
                   </span>
                   <strong className="font-bold">Medical Disclaimer: </strong>
@@ -44,7 +44,7 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <p className="text-[14px] leading-6 text-muted text-center md:text-left">
+            <p className="text-sm leading-6 text-muted text-center md:text-left">
               © 2026 ABSOVEX is operated by Extra You, Inc. All rights reserved.
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function Footer() {
                 key={heading}
                 className="flex flex-col items-center text-center md:text-left md:items-start gap-5 flex-1"
               >
-                <p className="text-[16px] font-medium leading-8 text-[#0d3127]">
+                <p className="text-base font-medium leading-8 text-heading">
                   {heading}
                 </p>
                 <ul className="flex flex-col gap-2">
@@ -64,7 +64,7 @@ export default function Footer() {
                     <li key={label}>
                       <a
                         href={href}
-                        className="text-[14px] leading-6 text-muted hover:text-[#0d3127] transition-colors"
+                        className="text-sm leading-6 text-muted hover:text-heading transition-colors"
                       >
                         {label}
                       </a>

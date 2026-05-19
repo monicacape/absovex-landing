@@ -38,7 +38,7 @@ export default function FAQ() {
             <h2 className="word-animate">
               Need help
               <br />
-              <span className="text-[#3f9d9a]">understanding the results?</span>
+              <span className="text-accent-muted">understanding the results?</span>
             </h2>
             <p className="line-animate text-lg font-medium leading-8 text-muted">
               After you unlock your report, you can ask follow-up questions to
@@ -50,8 +50,8 @@ export default function FAQ() {
 
         {/* CTA */}
         <div className="relative w-fit">
-          <div className="absolute bottom-[-8px] left-[10px] right-[10px] h-[13px] rounded-[50px] bg-[#9ab0b1] opacity-80 blur-[6px]" />
-          <button className="relative flex items-center gap-2 rounded-card bg-[#0f8a8d] px-8 py-4 text-base font-medium text-white">
+          <div className="absolute -bottom-2 left-2.5 right-2.5 h-3 rounded-full bg-shadow-teal opacity-80 blur-button" />
+          <button className="relative flex items-center gap-2 rounded-card bg-accent px-8 py-4 text-base font-medium text-white">
             <svg
               width="18"
               height="18"
@@ -84,7 +84,7 @@ export default function FAQ() {
               className="flex w-full items-start justify-between gap-4 text-left"
               onClick={() => setOpen(open === i ? -1 : i)}
             >
-              <span className="text-lg font-bold leading-6 text-[#0d3127]">
+              <span className="text-lg font-bold leading-6 text-heading">
                 {faq.question}
               </span>
               <img

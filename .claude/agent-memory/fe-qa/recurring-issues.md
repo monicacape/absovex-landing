@@ -17,6 +17,10 @@ metadata:
    **Why:** Site relies heavily on entrance animations; no reduced-motion branch has been added anywhere.
    **How to apply:** Flag as Blocker-level accessibility issue (WCAG 2.1 AA motion requirement).
 
-4. **`ScrollTrigger` imported but unused in Statistics.tsx** — imported at top, not registered, not passed in useGSAP calls. ESLint warns on this.
-   **Why:** Copy-paste from HowItWorks which does use ScrollTrigger internally via the stagger scrollTrigger option.
-   **How to apply:** Flag as Issue each review until cleaned up.
+4. **`ScrollTrigger` double-registered in Statistics.tsx** — `ScrollTrigger` is already registered globally in `page.tsx` (`gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText)`). Statistics.tsx now also calls `gsap.registerPlugin(ScrollTrigger)` at module level. GSAP silently handles re-registration but it is redundant.
+   **Why:** Dev needed ScrollTrigger for the stats card scroll trigger and copied the pattern from HowItWorks.tsx, which has the same redundancy.
+   **How to apply:** Flag as Issue each review until the local registration is removed.
+
+5. **Arbitrary bracket values instead of named tokens** — Stats cards now use `border-[rgba(14,100,102,0.16)]`, `bg-[#e8f7f7]`, `border-[#a7d2d2]`, `rounded-[8px]`, `text-[18px]`, `text-[14px]`, `text-[12px]`, `text-[20px]`, `text-[16px]`, `gap-[60px]`, `max-w-[694px]`, `size-[60px]`. This is a project-wide recurring pattern against tailwind-conventions rules.
+   **Why:** Dev skips extending tailwind.config for one-off values.
+   **How to apply:** Flag all bracket values in each review; cross-reference against globals.css token list.

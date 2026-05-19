@@ -24,7 +24,7 @@ const items = [
   },
   {
     icon: "/icons/bookmark.svg",
-    iconClass: "h-10 w-[30px]",
+    iconClass: "h-10 w-icon-wide",
     title: "Your quick reference",
     description:
       "Use a short fridge-ready version when you need the fast answer.",
@@ -48,13 +48,13 @@ export default function WhatYouGet() {
     <section className="flex flex-col items-center gap-10 py-12 lg:py-20 lg:max-w-10/12 mx-auto relative">
       {/* Header */}
       <PinkAbsorb></PinkAbsorb>
-      <div className="flex max-w-[700px] flex-col items-center gap-5 text-center">
+      <div className="flex max-w-content-sm flex-col items-center gap-5 text-center">
         <EyebrowBadge label="What You Get" />
         <div className="flex flex-col items-center gap-5">
           <h2 className="word-animate">
             One report.
             <br className="hidden lg:block" />
-            <span className="text-[#0f8a8d]">Clear answers.</span>
+            <span className="text-accent">Clear answers.</span>
           </h2>
           <p className="line-animate text-lg font-medium leading-8 text-muted">
             Your report shows where your current routine may be working against
@@ -68,13 +68,13 @@ export default function WhatYouGet() {
         {items.map((item) => (
           <div
             key={item.title}
-            className="card flex flex-col items-center gap-4 rounded-card border border-stroke bg-white/60 px-6 py-6 md:py-10 text-center shadow-[0px_14px_24px_0px_rgba(0,34,31,0.04)] backdrop-blur-[8px]"
+            className="card flex flex-col items-center gap-4 rounded-card border border-stroke bg-white/60 px-6 py-6 md:py-10 text-center shadow-card-lg backdrop-blur"
           >
-            <div className="flex size-20 items-center justify-center rounded-[8px] bg-[#fff7eb] p-[18px] shrink-0">
+            <div className="flex size-20 items-center justify-center rounded-lg bg-cream-bg p-icon-pad shrink-0">
               <img src={item.icon} alt="" className={item.iconClass} />
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-lg font-bold leading-6 text-[#0f8a8d]">
+              <p className="text-lg font-bold leading-6 text-accent">
                 {item.title}
               </p>
               <p className="text-sm leading-6 text-muted">

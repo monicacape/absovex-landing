@@ -11,7 +11,7 @@ export default function Why29() {
           className="rounded-card overflow-hidden px-8 py-10"
           style={{ backgroundImage: "url('/green-cream.png')" }}
         >
-          <div className="flex lg:min-h-[383px] flex-col justify-between gap-10 lg:max-w-[580px] relative z-10 items-center text-center lg:text-left lg:items-start">
+          <div className="flex lg:min-h-why29 flex-col justify-between gap-10 lg:max-w-content-xs relative z-10 items-center text-center lg:text-left lg:items-start">
             {/* Top */}
             <div className="flex flex-col gap-5">
               <div className="flex justify-center lg:justify-start">
@@ -51,7 +51,7 @@ export default function Why29() {
           alt=""
           width={350}
           height={525}
-          className="pointer-events-none absolute bottom-0 !-right-10 !left-auto hidden !h-[125%] !w-auto lg:block !top-auto opacity-60 xl:opacity-100"
+          className="pointer-events-none absolute bottom-0 !-right-10 !left-auto hidden !h-overflow !w-auto lg:block !top-auto opacity-60 xl:opacity-100"
         />
       </div>
     </section>

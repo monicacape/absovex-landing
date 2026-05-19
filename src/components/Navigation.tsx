@@ -38,7 +38,7 @@ export default function Navigation() {
     <>
       <nav
         ref={navRef}
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-10 py-4 bg-[#FFFFFF60] backdrop-blur-md border-b border-white/20 min-h-[88px] gap-x-6"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-10 py-4 bg-nav-bg backdrop-blur-md border-b border-white/20 min-h-nav gap-x-6"
       >
         {/* Logo */}
         <div>
@@ -50,7 +50,7 @@ export default function Navigation() {
               height={32}
               priority
               unoptimized
-              className="w-[112px] xl:w-[138px]"
+              className="w-logo xl:w-logo-xl"
             />
             {/* <Image
               src="/logo-icon.png"
@@ -70,7 +70,7 @@ export default function Navigation() {
             <li key={href}>
               <Link
                 href={href}
-                className="text-sm font-medium text-[#0d3127] transition-opacity hover:opacity-70"
+                className="text-sm font-medium text-heading transition-opacity hover:opacity-70"
               >
                 {label}
               </Link>
@@ -136,7 +136,7 @@ export default function Navigation() {
               <li key={href}>
                 <Link
                   href={href}
-                  className="text-2xl font-medium text-[#0d3127] transition-opacity hover:opacity-70"
+                  className="text-2xl font-medium text-heading transition-opacity hover:opacity-70"
                   onClick={() => setMenuOpen(false)}
                 >
                   {label}

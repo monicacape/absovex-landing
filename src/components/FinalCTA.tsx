@@ -6,7 +6,7 @@ export default function FinalCTA() {
     <section className="relative pt-10 lg:pt-20">
       {/* Banner card */}
       <div
-        className="relative overflow-hidden xl:rounded-[24px]"
+        className="relative overflow-hidden xl:rounded-3xl"
         style={{
           backgroundImage: "url('/footer.png')",
           backgroundSize: "cover",
@@ -14,8 +14,8 @@ export default function FinalCTA() {
         }}
       >
         {/* Content — offset right to make room for paper */}
-        <div className="relative z-10 flex lg:min-h-[420px] items-center justify-end py-20 lg:py-0">
-          <div className="flex w-full max-w-none lg:max-w-[620px] xl:max-w-[800px] flex-col gap-10 md:pr-8 lg:pr-14 px-6">
+        <div className="relative z-10 flex lg:min-h-cta items-center justify-end py-20 lg:py-0">
+          <div className="flex w-full max-w-none lg:max-w-cta-text xl:max-w-cta-text-xl flex-col gap-10 md:pr-8 lg:pr-14 px-6">
             <div className="flex flex-col gap-2 text-white text-center lg:text-left">
               <h2 className="text-white">
                 Stop guessing how to take
@@ -30,7 +30,7 @@ export default function FinalCTA() {
 
             <div className="flex flex-wrap flex-col lg:flex-row items-center gap-5">
               <div className="relative">
-                <div className="absolute bottom-[-8px] left-[10px] right-[10px] h-[13px] rounded-[50px] bg-[#0c5254] blur-[6px]" />
+                <div className="absolute -bottom-2 left-2.5 right-2.5 h-3 rounded-full bg-accent-dark blur-button" />
                 <Button href="#" showArrow hideShadow>
                   Get My $29 Report
                 </Button>
@@ -54,7 +54,7 @@ export default function FinalCTA() {
           alt=""
           width={514}
           height={603}
-          className="w-[514px]"
+          className="w-cta-img"
         />
       </div>
     </section>

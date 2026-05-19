@@ -20,20 +20,20 @@ export default function Button({
     "relative inline-flex items-center justify-center gap-4 rounded-card px-8 py-5 lg:py-3 text-xl lg:text-base font-medium transition-opacity hover:opacity-90 w-full md:w-auto";
 
   const variants: Record<ButtonVariant, string> = {
-    default: "bg-[#0f8a8d] text-white",
-    secondary: "bg-white text-[#f2188f]",
+    default: "bg-accent text-white",
+    secondary: "bg-white text-pink",
   };
 
   const shadowColor: Record<ButtonVariant, string> = {
-    default: "bg-[#9ab0b1]",
-    secondary: "bg-[#e2dcd1]",
+    default: "bg-shadow-teal",
+    secondary: "bg-shadow-cream",
   };
 
   return (
     <div className="relative w-full md:w-auto md:shrink-0">
       {!hideShadow && (
         <div
-          className={`absolute bottom-[-8px] left-[10px] opacity-80 right-[10px] h-[13px] rounded-[50px] blur-[6px] ${shadowColor[variant]}`}
+          className={`absolute -bottom-2 left-2.5 opacity-80 right-2.5 h-3 rounded-full blur-button ${shadowColor[variant]}`}
         />
       )}
       <a className={`${base} ${variants[variant]} ${className}`} {...props}>

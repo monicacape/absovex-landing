@@ -30,8 +30,8 @@ export default function RootLayout({
         <Navigation />
         <SmoothScroll />
         <div id="smooth-wrapper">
-          <div id="smooth-content" className="min-h-[1400px]">
-            <main className="flex flex-col flex-1 px-6 lg:px-10 top-[88px] relative pb-20">
+          <div id="smooth-content" className="min-h-page">
+            <main className="flex flex-col flex-1 px-6 lg:px-10 top-nav relative pb-20">
               {children}
             </main>
             <Footer />

@@ -14,7 +14,7 @@ const steps = [
     description:
       "List your medications, supplements, vitamins, and herbs. Absovex uses this to identify possible timing and absorption issues.",
     image: "/steps/1.png",
-    imgClass: "top-[52px] relative",
+    imgClass: "top-13 relative",
   },
   {
     number: "02",
@@ -22,7 +22,7 @@ const steps = [
     description:
       "Tell us about your meals, coffee, sleep, and daily habits. Your routine helps Absovex understand where conflicts may happen.",
     image: "/steps/2.png",
-    imgClass: "top-[-40px] relative",
+    imgClass: "-top-10 relative",
   },
   {
     number: "03",
@@ -30,7 +30,7 @@ const steps = [
     description:
       "Absovex reviews your stack for timing, spacing, and food conflicts. We turn the findings into practical recommendations you can follow.",
     image: "/steps/3.png",
-    imgClass: "top-[60px] relative",
+    imgClass: "top-15 relative",
   },
   {
     number: "04",
@@ -38,7 +38,7 @@ const steps = [
     description:
       "Receive a personalized report with suggested changes and a daily guide. See what may be clashing, what to move, and why it matters.",
     image: "/steps/4.png",
-    imgClass: "top-[40px] relative",
+    imgClass: "top-10 relative",
     cta: true,
   },
 ];
@@ -63,13 +63,13 @@ export default function HowItWorks() {
   return (
     <section className="flex flex-col items-center gap-20 py-12 lg:py-20 text-center lg:text-start">
       {/* Header */}
-      <div className="flex lg:max-w-[700px] flex-col items-center gap-5 text-center">
+      <div className="flex lg:max-w-content-sm flex-col items-center gap-5 text-center">
         <EyebrowBadge label="How It Works" />
         <div className="flex flex-col items-center gap-5">
           <h2 className="word-animate">
             Tell us what you take.
             <br className="hidden lg:block" />
-            <span className="text-[#0f8a8d]">We sort out the rest.</span>
+            <span className="text-accent">We sort out the rest.</span>
           </h2>
           <p className="line-animate text-lg font-medium leading-8 text-muted split-animate">
             Add your meds, supplements, and daily routine. Absovex checks how
@@ -88,11 +88,11 @@ export default function HowItWorks() {
             <div
               className={`flex flex-col gap-5 py-5] flex-1 items-center lg:items-start ${imageRight ? "lg:pr-10" : "lg:pl-10"}`}
             >
-              <span className="text-2xl font-bold text-[#f2188f]">
-                <span className="relative top-[-2px]">/</span> {step.number}
+              <span className="text-2xl font-bold text-pink">
+                <span className="relative -top-0.5">/</span> {step.number}
               </span>
               <div className="flex flex-col items-center lg:items-start gap-5">
-                <p className="text-2xl font-bold text-[#0d3127] word-animate">
+                <p className="text-2xl font-bold text-heading word-animate">
                   {step.title}
                 </p>
                 <p className="text-lg font-medium leading-8 text-muted line-animate">
@@ -111,7 +111,7 @@ export default function HowItWorks() {
 
           const imageBlock = (
             <div
-              className="relative flex-1 overflow-hidden rounded-card px-4 lg:px-8 lg:h-[400px] bg-warm bg-center bg-contain max-w-[580px] max-h-[400px] flex-[1_0_400px] lg:flex-1 card"
+              className="relative flex-1 overflow-hidden rounded-card px-4 lg:px-8 lg:h-section-img bg-warm bg-center bg-contain max-w-content-xs max-h-section-img flex-step-img lg:flex-1 card"
               style={{ backgroundImage: "url('/tile-cream.png')" }}
             >
               <Image
@@ -121,7 +121,7 @@ export default function HowItWorks() {
                 height={460}
                 className={`h-auto w-full object-cover ${step.imgClass ?? ""}`}
               />
-              <div className="pointer-events-none absolute inset-0 shadow-[inset_0px_-20px_64px_-30px_rgba(199,195,181,0.6)]" />
+              <div className="pointer-events-none absolute inset-0 shadow-inner-warm" />
             </div>
           );
 

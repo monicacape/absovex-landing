@@ -55,7 +55,7 @@ export default function Hero() {
       height: 24,
       bold: "Educational tool.",
       sub: "Not medical advice",
-      imgClassName: "w-[17px] h-[24px]",
+      imgClassName: "w-icon-bolt h-icon-bolt",
     },
   ] as const;
 
@@ -66,7 +66,7 @@ export default function Hero() {
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 max-w-[1460px] mx-auto z-0 bg-no-repeat"
+        className="absolute inset-0 max-w-container-max mx-auto z-0 bg-no-repeat"
         style={{
           backgroundImage: "url('/lines.png')",
           backgroundSize: "contain",
@@ -80,7 +80,7 @@ export default function Hero() {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 shadow-[inset_0px_-20px_64px_-30px_rgba(199,195,181,0.6)]"
+        className="pointer-events-none absolute inset-0 shadow-inner-warm"
       />
 
       <div className="container grid grid-cols-12 items-center gap-12">
@@ -96,7 +96,7 @@ export default function Hero() {
             <span className="text-accent">working against</span> each other
           </h1>
 
-          <p className="scrub mt-7 text-[18px] font-medium leading-8 text-muted">
+          <p className="scrub mt-7 text-lg font-medium leading-8 text-muted">
             Hidden timing conflicts can reduce how well your stack works -
             sometimes <span className="text-pink">by up to 50%</span>.
             <br />
@@ -118,9 +118,9 @@ export default function Hero() {
             {trustBadges.map((badge) => (
               <div
                 key={badge.bold}
-                className="bg-white rounded-card px-4 py-3 drop-shadow-[0px_14px_12px_rgba(0,34,31,0.04)] flex items-center gap-3 flex-1"
+                className="bg-white rounded-card px-4 py-3 drop-shadow-card flex items-center gap-3 flex-1"
               >
-                <div className="bg-[#e8f7f7] border border-[#a7d2d2] rounded-[8px] flex items-center justify-center shrink-0 size-[40px]">
+                <div className="bg-icon-bg border border-icon-border rounded-lg flex items-center justify-center shrink-0 size-10">
                   <Image
                     src={badge.icon}
                     alt=""
@@ -132,7 +132,7 @@ export default function Hero() {
                     aria-hidden="true"
                   />
                 </div>
-                <div className="flex flex-col text-[12px] leading-4 text-accent">
+                <div className="flex flex-col text-xs leading-4 text-accent">
                   <span className="font-bold">{badge.bold}</span>
                   <span className="font-normal">{badge.sub}</span>
                 </div>

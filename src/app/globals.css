@@ -16,6 +16,59 @@
   --color-muted: #4e655f;
   --color-warm: #fffaf3;
   --leading-heading: 1.3;
+
+  --color-icon-bg: #e8f7f7;
+  --color-icon-border: #a7d2d2;
+  --color-badge-bg: #fee3e9;
+  --color-cream-bg: #fff7eb;
+  --color-shadow-teal: #9ab0b1;
+  --color-shadow-cream: #e2dcd1;
+  --color-border-warm: #e5e0d5;
+  --color-stroke-subtle: rgba(14, 100, 102, 0.16);
+  --color-accent-muted: #3f9d9a;
+  --color-accent-dark: #0c5254;
+  --color-accent-deep: #0f7e7b;
+  --color-nav-bg: rgba(255, 255, 255, 0.376);
+
+  --drop-shadow-card: 0px 14px 12px rgba(0, 34, 31, 0.04);
+  --shadow-card-lg: 0px 14px 24px 0px rgba(0, 34, 31, 0.04);
+  --shadow-inner-warm: inset 0px -20px 64px -30px rgba(199, 195, 181, 0.6);
+
+  --blur-button: 6px;
+  --blur-subtle: 4px;
+
+  --spacing-13: 3.25rem;
+  --spacing-15: 3.75rem;
+  --spacing-icon-pad: 1.125rem;
+
+  --width-content-sm: 43.375rem;
+  --width-content-xs: 36.25rem;
+  --width-logo: 7rem;
+  --width-logo-xl: 8.625rem;
+  --width-icon-wide: 1.875rem;
+  --width-cta-img: 32.125rem;
+  --width-cta-text: 38.75rem;
+  --width-cta-text-xl: 50rem;
+  --width-container-max: 91.25rem;
+  --width-score-card: 22.5rem;
+  --width-score-offset: calc(100% - 2.5rem);
+  --width-icon-bolt: 17px;
+
+  --height-section-img: 25rem;
+  --height-nav: 5.5rem;
+  --height-divider: 5.125rem;
+  --height-cta: 26.25rem;
+  --height-page-min: 87.5rem;
+  --height-icon-bolt: 24px;
+  --height-why29: 23.9375rem;
+  --height-overflow: 125%;
+
+  --scale-108: 1.08;
+
+  --inset-absorb-left: 64%;
+  --inset-absorb-top: -24%;
+
+  --flex-step-img: 1 0 25rem;
 }
 
 @utility rounded-card {
