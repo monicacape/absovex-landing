@@ -1,10 +1,8 @@
 import Button from "@/components/Button";
-import GreenAbsorbHome from "../GreenAbsorbHome";
 
 export default function FinalCTA() {
   return (
     <section className="relative">
-      <GreenAbsorbHome />
       {/* Banner card */}
       <div
         className="relative overflow-hidden xl:rounded-3xl bg-cover bg-center final-cta"

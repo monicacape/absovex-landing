@@ -111,7 +111,10 @@ export default function Hero() {
             <Button
               href="#"
               variant="pink"
-              onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent("open-pdf-modal")); }}
+              onClick={(e) => {
+                e.preventDefault();
+                window.dispatchEvent(new CustomEvent("open-pdf-modal"));
+              }}
             >
               View Sample Report
             </Button>
@@ -124,7 +127,7 @@ export default function Hero() {
             alt="Absovex timing report"
             width={568}
             height={558}
-            className="rounded-2xl max-w-[820px] lg:max-w-none lg:min-w-[640px] w-full h-auto -mb-10 lg:mb-0 hero-image"
+            className="rounded-2xl max-w-[820px] lg:max-w-none lg:min-w-[640px] w-full h-auto -mb-10 lg:mb-0 hero-image relative -left-10"
             priority
           />
         </div>
@@ -158,6 +161,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-
   );
 }

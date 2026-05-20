@@ -4,10 +4,6 @@ export default function GreenAbsorb() {
   return (
     <div className="absolute shrink-0 left-absorb-left top-absorb-top pink-absorb">
       <div className="relative isolate">
-        <div
-          aria-hidden="true"
-          className="animate-glow-pulse absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 size-[320px] rounded-full bg-pink blur-[80px]"
-        />
         <div className="relative z-10">
           <svg
             width="1092"

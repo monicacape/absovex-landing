@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import EyebrowBadge from "@/components/EyebrowBadge";
+import GreenAbsorb from "../GreenAbsorb";
 
 type Faq = { question: string; answer: string | null };
 
@@ -272,6 +273,7 @@ export default function FAQ() {
     >
       {/* Header */}
       <div className="flex max-w-content-sm flex-col items-center lg:items-start gap-5 text-center lg:text-left flex-3 mx-auto">
+        <GreenAbsorb />
         <EyebrowBadge label="FAQ" />
         <div className="flex flex-col items-center lg:items-start gap-5">
           <h2 className="word-animate">
