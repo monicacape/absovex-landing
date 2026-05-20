@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
 import EyebrowBadge from "@/components/EyebrowBadge";
 import GreenAbsorb from "../GreenAbsorb";
 
@@ -79,127 +78,6 @@ function FAQItem({
   isOpen: boolean;
   onToggle: () => void;
 }) {
-  const bodyRef = useRef<HTMLDivElement>(null);
-  const circleFillRef = useRef<SVGCircleElement>(null);
-  const hLineWhiteRef = useRef<SVGPathElement>(null);
-  const vLineRef = useRef<SVGPathElement>(null);
-  const isFirstRender = useRef(true);
-
-  useEffect(() => {
-    const body = bodyRef.current;
-    const circleFill = circleFillRef.current;
-    const hLineWhite = hLineWhiteRef.current;
-    const vLine = vLineRef.current;
-
-    // On mount: set initial state without animation
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      if (body)
-        gsap.set(body, {
-          height: isOpen && faq.answer ? "auto" : 0,
-          opacity: isOpen ? 1 : 0,
-        });
-      if (circleFill)
-        gsap.set(circleFill, {
-          opacity: isOpen ? 1 : 0,
-          scale: isOpen ? 1 : 0,
-          transformOrigin: "50% 50%",
-        });
-      if (hLineWhite) gsap.set(hLineWhite, { opacity: isOpen ? 1 : 0 });
-      if (vLine)
-        gsap.set(vLine, {
-          scaleY: isOpen ? 0 : 1,
-          opacity: isOpen ? 0 : 1,
-          transformOrigin: "50% 50%",
-        });
-      return;
-    }
-    const d = 1;
-
-    if (isOpen) {
-      // Expand body
-      if (body && faq.answer) {
-        gsap.killTweensOf(body);
-        gsap.fromTo(
-          body,
-          { height: 0, opacity: 0 },
-          {
-            height: "auto",
-            opacity: 1,
-            duration: 0.38 * d,
-            ease: "power2.out",
-          },
-        );
-      }
-      // Icon: fill circle pops in, vertical line collapses, white h-line fades in
-      if (circleFill) {
-        gsap.killTweensOf(circleFill);
-        gsap.to(circleFill, {
-          opacity: 1,
-          scale: 1,
-          duration: 0.28 * d,
-          ease: "back.out(1.4)",
-          transformOrigin: "50% 50%",
-        });
-      }
-      if (vLine) {
-        gsap.killTweensOf(vLine);
-        gsap.to(vLine, {
-          scaleY: 0,
-          opacity: 0,
-          duration: 0.18 * d,
-          ease: "power2.in",
-          transformOrigin: "50% 50%",
-        });
-      }
-      if (hLineWhite) {
-        gsap.killTweensOf(hLineWhite);
-        gsap.to(hLineWhite, {
-          opacity: 1,
-          duration: 0.15 * d,
-          delay: 0.1 * d,
-        });
-      }
-    } else {
-      // Collapse body
-      if (body && faq.answer) {
-        gsap.killTweensOf(body);
-        gsap.to(body, {
-          height: 0,
-          opacity: 0,
-          duration: 0.25 * d,
-          ease: "power2.in",
-        });
-      }
-      // Icon: fill circle shrinks, vertical line expands, white h-line fades out
-      if (circleFill) {
-        gsap.killTweensOf(circleFill);
-        gsap.to(circleFill, {
-          opacity: 0,
-          scale: 0,
-          duration: 0.2 * d,
-          ease: "power2.in",
-          transformOrigin: "50% 50%",
-        });
-      }
-      if (vLine) {
-        gsap.killTweensOf(vLine);
-        gsap.to(vLine, {
-          scaleY: 1,
-          opacity: 1,
-          duration: 0.22 * d,
-          ease: "power2.out",
-          transformOrigin: "50% 50%",
-        });
-      }
-      if (hLineWhite) {
-        gsap.killTweensOf(hLineWhite);
-        gsap.to(hLineWhite, { opacity: 0, duration: 0.1 * d });
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen]);
-
   return (
     <div className="card flex flex-col rounded-card border border-stroke-subtle bg-white/60 px-8 py-6 shadow-card-lg backdrop-blur self-start scrub-animate">
       <button
@@ -212,47 +90,32 @@ function FAQItem({
           {faq.question}
         </span>
 
-        {/* Icon: layered SVG — circles and lines are independently animated */}
         <svg
           width="24"
           height="24"
           viewBox="0 0 24 24"
           fill="none"
           aria-hidden="true"
-          className="mt-0.5 shrink-0"
+          className="mt-0.5 shrink-0 transition-transform duration-200"
         >
-          {/* Teal outline circle — always visible */}
           <circle cx="12" cy="12" r="11" stroke="#0f8a8d" strokeWidth="1" />
-          {/* Teal h-line — always visible, shown when closed */}
-          <path
-            d="M8 12h8"
-            stroke="#0f8a8d"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          {/* Teal v-line — GSAP scaleY 1→0 on open */}
-          <path
-            ref={vLineRef}
-            d="M12 8v8"
-            stroke="#0f8a8d"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          {/* Filled circle — GSAP scale 0→1 on open, sits above lines */}
-          <circle ref={circleFillRef} cx="12" cy="12" r="12" fill="#0f8a8d" />
-          {/* White h-line — GSAP opacity 0→1 on open, sits above filled circle */}
-          <path
-            ref={hLineWhiteRef}
-            d="M8 12h8"
-            stroke="white"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
+          <path d="M8 12h8" stroke={isOpen ? "white" : "#0f8a8d"} strokeWidth="1.5" strokeLinecap="round" />
+          {!isOpen && (
+            <path d="M12 8v8" stroke="#0f8a8d" strokeWidth="1.5" strokeLinecap="round" />
+          )}
+          {isOpen && (
+            <circle cx="12" cy="12" r="12" fill="#0f8a8d" />
+          )}
+          {isOpen && (
+            <path d="M8 12h8" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+          )}
         </svg>
       </button>
 
-      {/* Answer body — always in DOM, height animated by GSAP */}
-      <div ref={bodyRef} style={{ overflow: "hidden" }}>
+      <div
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{ maxHeight: isOpen ? "600px" : "0px", opacity: isOpen ? 1 : 0 }}
+      >
         {faq.answer && (
           <p className="pt-4 text-base leading-6 text-muted whitespace-pre-line">
             {faq.answer}
@@ -264,7 +127,7 @@ function FAQItem({
 }
 
 export default function FAQ() {
-  const [open, setOpen] = useState<number>(0);
+  const [open, setOpen] = useState<number>(-1);
 
   return (
     <section

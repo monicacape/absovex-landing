@@ -67,8 +67,8 @@ export default function Built() {
                     <Image
                       src={card.img}
                       alt=""
-                      width={296}
-                      height={290}
+                      width={248}
+                      height={267}
                       className="w-full max-w-[320px] mx-auto image-magnet imgs-animate"
                     />
                   </div>

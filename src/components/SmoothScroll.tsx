@@ -24,7 +24,18 @@ export default function SmoothScroll() {
     const hash = window.location.hash;
     if (hash) smoother.scrollTo(hash, false);
 
-    return () => smoother.kill();
+    const refresh = () => ScrollTrigger.refresh();
+
+    if (document.readyState === "complete") {
+      requestAnimationFrame(refresh);
+    } else {
+      window.addEventListener("load", refresh);
+    }
+
+    return () => {
+      window.removeEventListener("load", refresh);
+      smoother.kill();
+    };
   }, []);
 
   useEffect(() => {

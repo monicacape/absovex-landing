@@ -14,8 +14,8 @@ const cards = [
     title: "Personalized Timing Analysis",
     desc: "We look at your meals, drinks, supplements, and medications to help identify possible timing conflicts.",
     img: "/why/why-1.png",
-    imgW: 383,
-    imgH: 416,
+    imgW: 350,
+    imgH: 236,
   },
   {
     icon: "/icons/chat.svg",
@@ -24,8 +24,8 @@ const cards = [
     title: "Provider Conversation Prompts",
     desc: "Your report includes questions you can bring to your doctor or pharmacist based on your actual routine.",
     img: "/why/why-2.png",
-    imgW: 384,
-    imgH: 750,
+    imgW: 350,
+    imgH: 236,
   },
   {
     icon: "/icons/shield.svg",
@@ -34,8 +34,8 @@ const cards = [
     title: "Privacy First",
     desc: "No account required. Your information is used to generate your report and is not stored, sold, or shared.",
     img: "/why/why-3.png",
-    imgW: 383,
-    imgH: 416,
+    imgW: 350,
+    imgH: 236,
   },
 ];
 

@@ -4,6 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import FinalCTA from "@/components/Home/FinalCTA";
 import { useImageMagnet } from "@/hooks/useImageMagnet";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const navLinks = {
   Product: [
@@ -26,6 +32,101 @@ const navLinks = {
 
 export default function Footer() {
   useImageMagnet();
+
+  useGSAP(() => {
+    const words = gsap.utils.toArray<HTMLElement>(".word-animate");
+    const lines = gsap.utils.toArray<HTMLElement>(".line-animate");
+    const srubs = gsap.utils.toArray<HTMLElement>(".scrub-animate");
+
+    // words.forEach((el) => {
+    //   const split = new SplitText(el, { type: "words", mask: "words" });
+
+    //   gsap.from(split.words, {
+    //     opacity: 0,
+    //     y: 20,
+    //     duration: 0.6,
+    //     ease: "power2.out",
+    //     stagger: 0.06,
+    //     scrollTrigger: {
+    //       trigger: el,
+    //       start: "top 65%",
+    //       toggleActions: "play none none none",
+    //     },
+    //   });
+    // });
+
+    // lines.forEach((el) => {
+    //   const split = new SplitText(el, { type: "lines", mask: "lines" });
+
+    //   gsap.from(split.lines, {
+    //     opacity: 0,
+    //     y: 20,
+    //     duration: 0.6,
+    //     ease: "power2.out",
+    //     stagger: 0.06,
+    //     scrollTrigger: {
+    //       trigger: el,
+    //       start: "top 65%",
+    //       toggleActions: "play none none none",
+    //     },
+    //   });
+    // });
+
+    srubs.forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top bottom",
+          end: "center 60%",
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+        y: 32,
+        opacity: 0,
+        ease: "none",
+        stagger: 0.4,
+      });
+    });
+
+    // gsap.from(".pink-absorb", {
+    //   scrollTrigger: {
+    //     trigger: ".pink-absorb",
+    //     start: "top center",
+    //     scrub: true,
+    //     invalidateOnRefresh: true,
+    //   },
+    //   y: -200,
+    //   ease: "none",
+    //   stagger: 0.4,
+    // });
+
+    // gsap.to(".green-absorb", {
+    //   scrollTrigger: {
+    //     trigger: ".green-absorb",
+    //     start: "top center",
+    //     scrub: true,
+    //     invalidateOnRefresh: true,
+    //   },
+    //   y: 200,
+    //   ease: "none",
+    //   stagger: 0.4,
+    // });
+
+    gsap.from(".final-cta", {
+      scrollTrigger: {
+        trigger: ".final-cta",
+        start: "top bottom",
+        end: "center 80%",
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+      y: 100,
+      opacity: 0.4,
+      ease: "none",
+    });
+
+    ScrollTrigger.refresh();
+  });
   return (
     <div className="container">
       <FinalCTA></FinalCTA>
