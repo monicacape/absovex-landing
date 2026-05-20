@@ -46,7 +46,10 @@ const items = [
 
 export default function WhatYouGet() {
   return (
-    <section className="flex flex-col items-center gap-10 py-12 lg:py-20 lg:max-w-10/12 mx-auto relative -z-10">
+    <section
+      id="what-you-get"
+      className="flex flex-col items-center gap-10 py-12 lg:py-20 lg:max-w-10/12 mx-auto relative -z-10"
+    >
       {/* Header */}
       <PinkAbsorb></PinkAbsorb>
       <div className="flex max-w-content-sm flex-col items-center gap-5 text-center">

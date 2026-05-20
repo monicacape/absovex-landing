@@ -37,7 +37,10 @@ const cards = [
 
 export default function Why29() {
   return (
-    <section className="flex flex-col gap-10 relatize z-10 py-12 lg:py-20">
+    <section
+      id="why-29"
+      className="flex flex-col gap-10 relatize z-10 py-12 lg:py-20"
+    >
       <div className="grid">
         <div className="col-start-1 row-start-1">
           <div
@@ -109,7 +112,12 @@ export default function Why29() {
                 </p>
               </div>
             </div>
-            <div className="overflow-hidden flex justify-center lg:justify-end relative bg-cream-bg px-6 pt-6 flex-1 items-center">
+            <div
+              className={
+                "overflow-hidden flex justify-center lg:justify-end relative bg-cream-bg px-6 flex-1 items-center" +
+                (card.title === "Privacy First" ? "" : " pt-6")
+              }
+            >
               <Image
                 src={card.img}
                 alt=""

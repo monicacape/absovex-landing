@@ -52,7 +52,10 @@ const items = [
 
 export default function Insights() {
   return (
-    <section className="flex flex-col items-center gap-10 py-12 lg:py-20 lg:max-w-10/12 mx-auto">
+    <section
+      id="insights"
+      className="flex flex-col items-center gap-10 py-12 lg:py-20 lg:max-w-10/12 mx-auto"
+    >
       {/* Header */}
       <div className="flex max-w-content-sm flex-col items-center gap-5 text-center">
         <EyebrowBadge label="Insights" />

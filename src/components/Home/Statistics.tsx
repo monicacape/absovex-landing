@@ -78,19 +78,35 @@ export default function Statistics() {
         toggleActions: "play none none none",
       },
     });
+
+    gsap.from(".agency-cards .card", {
+      opacity: 0,
+      y: 40,
+      duration: 0.6,
+      ease: "power2.out",
+      stagger: 0.06,
+      scrollTrigger: {
+        trigger: ".agency-cards",
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+    });
   });
 
   return (
-    <section className="flex flex-col items-center gap-15 py-12 lg:py-20">
+    <section
+      id="why-timing-matters"
+      className="flex flex-col items-center gap-15 py-12 lg:py-20"
+    >
       <div className="flex w-full max-w-content-sm flex-col items-center gap-5 text-center">
         <EyebrowBadge label="Why Timing Matters" />
         <div className="flex flex-col items-center gap-5">
-          <h2>
+          <h2 className="word-animate">
             Timing matters more
             <br />
             <span className="text-accent">than most people realize.</span>
           </h2>
-          <p className="text-lg font-medium leading-8 text-muted text-center">
+          <p className="text-lg font-medium leading-8 text-muted text-center line-animate">
             Food, drinks, minerals, supplements, and spacing can affect how your
             medications work, sometimes without you realizing it.
           </p>
@@ -130,8 +146,8 @@ export default function Statistics() {
         ))}
       </div>
 
-      <div className="flex flex-col items-center gap-10 w-full">
-        <p className="text-xl font-bold leading-8 text-heading text-center w-full">
+      <div className="agency-cards flex flex-col items-center gap-10 w-full">
+        <p className="text-xl font-bold leading-8 text-heading text-center w-full word-animate">
           Your report is built using trusted medication and supplement timing
           guidance from:
         </p>
@@ -139,7 +155,7 @@ export default function Statistics() {
           {agencies.map((agency) => (
             <div
               key={agency.name}
-              className="flex gap-5 items-center md:flex-row flex-col text-center md:text-left"
+              className="flex gap-5 items-center md:flex-row flex-col text-center md:text-left card"
             >
               <Image
                 src={agency.logo}
@@ -159,7 +175,7 @@ export default function Statistics() {
             </div>
           ))}
         </div>
-        <p className="text-base font-normal leading-6 text-muted text-center w-full">
+        <p className="text-base font-normal leading-6 text-muted text-center w-full line-animate">
           We combine evidence-based timing guidance with your personal routine
           to generate a schedule tailored to your day.
         </p>

@@ -107,7 +107,10 @@ export default function FAQ() {
   const [open, setOpen] = useState<number>(0);
 
   return (
-    <section className="flex flex-col items-center gap-10 py-12 md:py-20 relatize z-20">
+    <section
+      id="faq"
+      className="flex flex-col items-center gap-10 py-12 md:py-20 relatize z-20"
+    >
       {/* Header */}
       <div className="flex max-w-content-sm flex-col items-center gap-5 text-center">
         <EyebrowBadge label="FAQ" />

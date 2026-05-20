@@ -25,6 +25,14 @@ export default function Hero() {
 
       gsap.to(document.body, { opacity: 1, duration: 0.4, ease: "power2.out" });
 
+      gsap.from(".hero-image", {
+        x: 120,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.5,
+        ease: "power2.out",
+      });
+
       gsap.from(".scrub", {
         y: 20,
         opacity: 0,
@@ -93,7 +101,7 @@ export default function Hero() {
             text="Personalized Health Stack Report"
           />
 
-          <h1 className="scrub">
+          <h1 className="word-animate">
             Your supplements and medications might be{" "}
             <span className="text-accent">working against</span> each other
           </h1>
@@ -123,7 +131,7 @@ export default function Hero() {
             alt="Absovex timing report"
             width={568}
             height={558}
-            className="rounded-2xl max-w-[820px] lg:max-w-none lg:min-w-[640px] w-full h-auto -mb-10 lg:mb-0"
+            className="rounded-2xl max-w-[820px] lg:max-w-none lg:min-w-[640px] w-full h-auto -mb-10 lg:mb-0 hero-image"
             priority
           />
         </div>
