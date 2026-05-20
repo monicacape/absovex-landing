@@ -135,9 +135,12 @@ export default function Statistics() {
           Your report is built using trusted medication and supplement timing
           guidance from:
         </p>
-        <div className="flex flex-wrap justify-between items-center w-full gap-8">
+        <div className="flex flex-wrap justify-center lg:justify-between items-center w-full gap-8 md:flex-row flex-col">
           {agencies.map((agency) => (
-            <div key={agency.name} className="flex gap-5 items-center">
+            <div
+              key={agency.name}
+              className="flex gap-5 items-center md:flex-row flex-col text-center md:text-left"
+            >
               <Image
                 src={agency.logo}
                 alt={agency.name}

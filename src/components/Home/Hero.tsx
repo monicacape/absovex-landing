@@ -86,7 +86,7 @@ export default function Hero() {
       />
 
       <div className="container grid grid-cols-12 items-center gap-y-4">
-        <div className="col-span-12 lg:col-span-6 xl:col-span-7 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
+        <div className="col-span-12 lg:col-span-6 xl:col-span-7 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left relative xl:-top-14">
           <EyebrowBadge
             className="scrub mb-3"
             label="Try Now"
@@ -117,20 +117,20 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-5 relative z-10 overflow-visible mx-auto">
+        <div className="col-span-12 lg:col-span-6 xl:col-span-5 relative z-10 overflow-visible mx-auto">
           <Image
             src="/hero/hero.png"
             alt="Absovex timing report"
             width={568}
             height={558}
-            className="rounded-2xl max-w-[820px] lg:max-w-none lg:min-w-[568px] w-full h-auto -mb-10 lg:mb-0"
+            className="rounded-2xl max-w-[820px] lg:max-w-none lg:min-w-[640px] w-full h-auto -mb-10 lg:mb-0"
             priority
           />
         </div>
       </div>
 
-      <div className="container relative z-10">
-        <div className="scrub flex flex-nowrap md:flex-row flex-col gap-4 -mt-6 xl:-mt-10">
+      <div className="container relative z-10 xl:-mt-20">
+        <div className="scrub flex flex-nowrap md:flex-row flex-col gap-4 -mt-6 xl:-mt-10 relative xl:-top-4">
           {trustBadges.map((badge) => (
             <div
               key={badge.bold}
