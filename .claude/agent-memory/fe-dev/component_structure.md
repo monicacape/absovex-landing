@@ -13,6 +13,9 @@ Hero, Statistics, WhatYouGet, Why29, WhyTrust, WhyTrust, FAQ, Insights, FinalCTA
 **`src/components/` root** — shared/primitive components used across the app:
 Button, EyebrowBadge, Navigation, Footer, SmoothScroll, ShaderEffect, GreenAbsorb, PinkAbsorb, LinesLeft, LinesRightBottom, LinesRightTop
 
+**`src/hooks/`** — custom React hooks, all starting with `use`:
+useImageMagnet — applies GSAP magnetic repulsion + scale to every `.image-magnet` element; hook is called once in `page.tsx`; target cards mark their hover zone with `data-magnet-zone`.
+
 **Why:** Reorganized 2026-05-19 to separate page-section components from reusable primitives.
 
 **How to apply:** New home-page section components go in `Home/`. New shared UI primitives stay at the root. Use `@/components/Home/X` imports for sections, `@/components/X` for primitives.

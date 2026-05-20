@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import EyebrowBadge from "@/components/EyebrowBadge";
 import Button from "@/components/Button";
@@ -52,6 +54,7 @@ export default function Why29() {
       },
     });
   });
+
   return (
     <section
       id="why-29"
@@ -107,7 +110,8 @@ export default function Why29() {
         {cards.map((card) => (
           <div
             key={card.title}
-            className="border border-stroke-subtle rounded-card overflow-hidden relative flex flex-col gap-8 scrub-animate"
+            data-magnet-zone
+            className="border border-stroke-subtle rounded-card overflow-hidden relative flex flex-col gap-8"
           >
             <div className="flex flex-row gap-4 relative z-10 pt-8 px-6">
               <div className="bg-icon-bg border border-icon-border rounded-lg flex items-center justify-center shrink-0 size-15">
@@ -139,7 +143,7 @@ export default function Why29() {
                 alt=""
                 width={card.imgW}
                 height={card.imgH}
-                className="w-full top-0 max-w-[480px] h-auto"
+                className="image-magnet w-full top-0 max-w-[480px] h-auto imgs-animate"
               />
             </div>
           </div>

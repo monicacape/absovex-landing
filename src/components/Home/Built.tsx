@@ -96,7 +96,7 @@ export default function Built() {
                       alt=""
                       width={296}
                       height={290}
-                      className="w-full max-w-[320px] mx-auto"
+                      className="w-full max-w-[320px] mx-auto image-magnet imgs-animate"
                     />
                   </div>
                 </div>

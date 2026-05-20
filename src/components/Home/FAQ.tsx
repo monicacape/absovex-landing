@@ -125,7 +125,12 @@ function FAQItem({
         gsap.fromTo(
           body,
           { height: 0, opacity: 0 },
-          { height: "auto", opacity: 1, duration: 0.38 * d, ease: "power2.out" },
+          {
+            height: "auto",
+            opacity: 1,
+            duration: 0.38 * d,
+            ease: "power2.out",
+          },
         );
       }
       // Icon: fill circle pops in, vertical line collapses, white h-line fades in
@@ -202,7 +207,7 @@ function FAQItem({
       <button
         type="button"
         aria-expanded={isOpen}
-        className="flex w-full items-start justify-between gap-4 text-left"
+        className="flex w-full items-start justify-between gap-4 text-left cursor-pointer"
         onClick={onToggle}
       >
         <span className="text-lg font-bold leading-6 text-heading">

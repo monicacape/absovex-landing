@@ -11,10 +11,13 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
 import Built from "@/components/Home/Built";
 import Insights from "@/components/Home/Insights";
+import { useImageMagnet } from "@/hooks/useImageMagnet";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 
 export default function Home() {
+  useImageMagnet();
+
   useGSAP(() => {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
@@ -24,6 +27,7 @@ export default function Home() {
     const words = gsap.utils.toArray<HTMLElement>(".word-animate");
     const lines = gsap.utils.toArray<HTMLElement>(".line-animate");
     const srubs = gsap.utils.toArray<HTMLElement>(".scrub-animate");
+    const imgs = gsap.utils.toArray<HTMLElement>(".imgs-animate");
 
     words.forEach((el) => {
       const split = new SplitText(el, { type: "words", mask: "words" });
@@ -69,6 +73,20 @@ export default function Home() {
         },
         y: 32,
         opacity: 0,
+        ease: "none",
+        stagger: 0.4,
+      });
+    });
+
+    imgs.forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top bottom",
+          end: "center 60%",
+          scrub: true,
+        },
+        y: 50,
         ease: "none",
         stagger: 0.4,
       });
