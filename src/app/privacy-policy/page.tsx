@@ -232,7 +232,7 @@ const sections: Section[] = [
 export default function PrivacyPolicyPage() {
   return (
     <div className="container py-16 lg:py-24 max-w-content-sm">
-      <div className="max-w-3/4 mx-auto">
+      <div className="lg:max-w-3/4 mx-auto">
         <h1 className="mb-3 text-accent">Privacy Policy</h1>
         <p className="text-sm text-muted mb-10">Effective Date: June 2026</p>
 

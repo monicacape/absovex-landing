@@ -97,7 +97,7 @@ export default function HowItWorks() {
                 </p>
                 {step.cta && (
                   <div className="mt-2 w-fit">
-                    <Button href="#" showArrow>
+                    <Button href="https://app.absovex.com/" showArrow>
                       Start My Report
                     </Button>
                   </div>

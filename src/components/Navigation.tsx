@@ -4,10 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/Button";
 import { useRef, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { useNavClick } from "@/hooks/useNavClick";
 
 gsap.registerPlugin(useGSAP);
 
@@ -22,18 +21,7 @@ const links = [
 export default function Navigation() {
   const navRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const handleNavClick = (e: React.MouseEvent, href: string) => {
-    e.preventDefault();
-    if (pathname === "/") {
-      ScrollSmoother.get()?.scrollTo(href, true);
-      history.pushState(null, "", href);
-    } else {
-      router.push("/" + href);
-    }
-  };
+  const handleNavClick = useNavClick();
 
   useGSAP(
     () => {
@@ -87,7 +75,7 @@ export default function Navigation() {
         <div className="flex items-center justify-end gap-3">
           {/* CTA — hidden on mobile */}
           <div className="hidden md:block">
-            <Button href="#" size="small" showArrow hideShadow>
+            <Button href="https://app.absovex.com/" size="small" showArrow hideShadow>
               Get My $29 Report
             </Button>
           </div>
@@ -152,7 +140,7 @@ export default function Navigation() {
             ))}
           </ul>
           <Button
-            href="#"
+            href="https://app.absovex.com/"
             size="small"
             showArrow
             onClick={() => setMenuOpen(false)}

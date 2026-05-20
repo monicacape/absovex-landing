@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FinalCTA from "@/components/Home/FinalCTA";
 import { useImageMagnet } from "@/hooks/useImageMagnet";
+import { useNavClick } from "@/hooks/useNavClick";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
@@ -32,10 +33,9 @@ const navLinks = {
 
 export default function Footer() {
   useImageMagnet();
+  const handleNavClick = useNavClick();
 
   useGSAP(() => {
-    const words = gsap.utils.toArray<HTMLElement>(".word-animate");
-    const lines = gsap.utils.toArray<HTMLElement>(".line-animate");
     const srubs = gsap.utils.toArray<HTMLElement>(".scrub-animate");
 
     // words.forEach((el) => {
@@ -172,6 +172,9 @@ export default function Footer() {
                       <Link
                         href={href}
                         className="text-sm leading-6 text-muted hover:text-heading transition-colors"
+                        {...(href.startsWith("#") && {
+                          onClick: (e) => handleNavClick(e, href),
+                        })}
                       >
                         {label}
                       </Link>
