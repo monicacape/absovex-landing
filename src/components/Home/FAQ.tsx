@@ -132,7 +132,7 @@ export default function FAQ() {
         {faqs.map((faq, i) => (
           <div
             key={faq.question}
-            className="card flex flex-col gap-4 rounded-card border border-stroke-subtle bg-white/60 px-8 py-6 shadow-card-lg backdrop-blur self-start"
+            className="card flex flex-col gap-4 rounded-card border border-stroke-subtle bg-white/60 px-8 py-6 shadow-card-lg backdrop-blur self-start scrub-animate"
           >
             <button
               type="button"

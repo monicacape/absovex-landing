@@ -66,31 +66,6 @@ const agencies = [
 export default function Statistics() {
   useGSAP(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    gsap.from(".stats-cards .card", {
-      opacity: 0,
-      y: 40,
-      duration: 0.6,
-      ease: "power2.out",
-      stagger: 0.06,
-      scrollTrigger: {
-        trigger: ".stats-cards",
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    gsap.from(".agency-cards .card", {
-      opacity: 0,
-      y: 40,
-      duration: 0.6,
-      ease: "power2.out",
-      stagger: 0.06,
-      scrollTrigger: {
-        trigger: ".agency-cards",
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-    });
   });
 
   return (
@@ -117,7 +92,7 @@ export default function Statistics() {
         {stats.map((stat) => (
           <div
             key={stat.title}
-            className="card border border-stroke-subtle rounded-card flex flex-col gap-5 items-start pb-6 pt-8 px-8"
+            className="scrub-animate border border-stroke-subtle rounded-card flex flex-col gap-5 items-start pb-6 pt-8 px-8"
           >
             <div className="flex gap-4 items-start w-full">
               <div className="bg-icon-bg border border-icon-border rounded-lg flex items-center justify-center shrink-0 size-15">
@@ -155,7 +130,7 @@ export default function Statistics() {
           {agencies.map((agency) => (
             <div
               key={agency.name}
-              className="flex gap-5 items-center md:flex-row flex-col text-center md:text-left card"
+              className="flex gap-5 items-center md:flex-row flex-col text-center md:text-left scrub-animate"
             >
               <Image
                 src={agency.logo}

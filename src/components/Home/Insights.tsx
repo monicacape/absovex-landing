@@ -76,7 +76,7 @@ export default function Insights() {
         {items.map((item) => (
           <div
             key={item.title}
-            className="card flex flex-col items-center gap-4 rounded-card border border-stroke-subtle bg-white/60 px-6 py-10 text-center shadow-card-lg backdrop-blur"
+            className="scrub-animate flex flex-col items-center gap-4 rounded-card border border-stroke-subtle bg-white/60 px-6 py-10 text-center shadow-card-lg backdrop-blur"
           >
             <Image
               src={item.img}

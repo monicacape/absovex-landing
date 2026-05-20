@@ -1,26 +1,48 @@
+"use client";
+
 import Image from "next/image";
 import Button from "@/components/Button";
 import GreenAbsorb from "../GreenAbsorb";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function FinalCTA() {
+  useGSAP(() => {
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReduced) return;
+    gsap.from(".final-cta", {
+      scrollTrigger: {
+        trigger: ".final-cta",
+        start: "top bottom",
+        end: "center 80%",
+        scrub: true,
+      },
+      y: 100,
+      opacity: 0.4,
+      ease: "none",
+      stagger: 0.4,
+    });
+  });
   return (
     <section className="relative">
       <GreenAbsorb></GreenAbsorb>
       {/* Banner card */}
       <div
-        className="relative overflow-hidden xl:rounded-3xl bg-cover bg-center"
+        className="relative overflow-hidden xl:rounded-3xl bg-cover bg-center final-cta"
         style={{ backgroundImage: "url('/footer.png')" }}
       >
         {/* Content — offset right to make room for paper */}
         <div className="relative z-10 flex items-center justify-end py-12">
           <div className="flex w-full max-w-none lg:max-w-cta-text xl:max-w-cta-text-xl flex-col gap-10 px-10">
             <div className="flex flex-col gap-2 text-white text-center items-center justify-center lg:text-left">
-              <h2 className="text-white text-center">
+              <h2 className="text-white text-center word-animate">
                 Stop guessing how to take
                 <br className="hidden lg:block" />
                 everything together.
               </h2>
-              <p className="text-lg font-medium leading-8 text-white/90">
+              <p className="text-lg font-medium leading-8 text-white/90 line-animate">
                 Get your personalized Health Stack Optimized Report now.
               </p>
             </div>

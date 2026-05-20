@@ -72,7 +72,7 @@ export default function WhatYouGet() {
         {items.map((item) => (
           <div
             key={item.title}
-            className="card flex flex-col items-center gap-4 rounded-card border border-stroke bg-white/60 px-6 py-6 md:py-10 text-center shadow-card-lg backdrop-blur"
+            className="scrub-animate flex flex-col items-center gap-4 rounded-card border border-stroke bg-white/60 px-6 py-6 md:py-10 text-center shadow-card-lg backdrop-blur"
           >
             <div className="flex size-20 items-center justify-center rounded-lg bg-icon-bg p-icon-pad shrink-0">
               <img src={item.icon} alt="" className={item.iconClass} />

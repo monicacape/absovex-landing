@@ -53,7 +53,7 @@ export default function HowItWorks() {
       stagger: 0.06,
       scrollTrigger: {
         trigger: ".how-cards",
-        start: "top 85%",
+        start: "top 65%",
         toggleActions: "play none none none",
       },
     });

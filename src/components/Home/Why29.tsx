@@ -1,6 +1,8 @@
 import Image from "next/image";
 import EyebrowBadge from "@/components/EyebrowBadge";
 import Button from "@/components/Button";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const cards = [
   {
@@ -21,7 +23,7 @@ const cards = [
     desc: "Your report includes questions you can bring to your doctor or pharmacist based on your actual routine.",
     img: "/why/why-2.png",
     imgW: 384,
-    imgH: 785,
+    imgH: 750,
   },
   {
     icon: "/icons/shield.svg",
@@ -36,6 +38,20 @@ const cards = [
 ];
 
 export default function Why29() {
+  useGSAP(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    gsap.from(".doctor", {
+      opacity: 0,
+      x: 80,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".doctor",
+        start: "top 65%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
   return (
     <section
       id="why-29"
@@ -44,7 +60,7 @@ export default function Why29() {
       <div className="grid">
         <div className="col-start-1 row-start-1">
           <div
-            className="bg-warm rounded-card px-8 py-10 bg-cover relative"
+            className="bg-warm rounded-card px-8 py-10 bg-cover relative scrub-animate"
             style={{ backgroundImage: "url('/cream-bg.png')" }}
           >
             <Image
@@ -52,7 +68,7 @@ export default function Why29() {
               alt=""
               width={392}
               height={589}
-              className="hidden lg:block self-start justify-self-end pointer-events-none absolute right-0 bottom-0"
+              className="hidden lg:block self-start justify-self-end pointer-events-none absolute right-0 bottom-0 doctor"
             />
             <div className="flex flex-col justify-between gap-10 lg:max-w-2/3 items-center text-center lg:text-left lg:items-start">
               <div className="flex flex-col gap-5">
@@ -60,11 +76,11 @@ export default function Why29() {
                   <EyebrowBadge label="Why It's Worth $29" />
                 </div>
                 <div className="flex flex-col gap-5">
-                  <h3>
+                  <h3 className="word-animate">
                     A practical first step before your next doctor or pharmacist
                     conversation
                   </h3>
-                  <p className="text-base leading-8 text-muted">
+                  <p className="text-base leading-8 text-muted line-animate">
                     Absovex helps you organize your routine first. You can spot
                     possible timing issues, understand what may be clashing, and
                     bring better questions to your provider.
@@ -91,7 +107,7 @@ export default function Why29() {
         {cards.map((card) => (
           <div
             key={card.title}
-            className="border border-stroke-subtle rounded-card overflow-hidden relative flex flex-col gap-8"
+            className="border border-stroke-subtle rounded-card overflow-hidden relative flex flex-col gap-8 scrub-animate"
           >
             <div className="flex flex-row gap-4 relative z-10 pt-8 px-6">
               <div className="bg-icon-bg border border-icon-border rounded-lg flex items-center justify-center shrink-0 size-15">

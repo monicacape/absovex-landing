@@ -1,4 +1,6 @@
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const checklistItems = [
   "Medication and supplement timing rules",
@@ -17,17 +19,47 @@ const cards = [
 ];
 
 export default function Built() {
+  useGSAP(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    gsap.from(".step-cards .card", {
+      opacity: 0,
+      y: 40,
+      duration: 0.6,
+      ease: "power2.out",
+      stagger: 0.06,
+      scrollTrigger: {
+        trigger: ".step-cards",
+        start: "top 65%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.from(".checklist .item", {
+      opacity: 0,
+      y: 40,
+      duration: 0.6,
+      ease: "power2.out",
+      stagger: 0.06,
+      scrollTrigger: {
+        trigger: ".checklist",
+        start: "top 65%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
   return (
     <section className="bg-icon-bg -mx-10 px-10 lg:px-14">
       <div className="container py-16">
         <div className="flex flex-col items-start gap-10 lg:flex-row">
-          <div className="flex shrink-0 flex-col gap-5 w-full lg:w-auto text-center md:text-left">
-            <h3 className="text-accent">How your report is built</h3>
+          <div className="flex shrink-0 flex-col gap-5 w-full lg:w-auto text-center md:text-left checklist">
+            <h3 className="text-accent word-animate">
+              How your report is built
+            </h3>
             <ul className="grid grid-flow-row md:grid-cols-2 grid-cols-1 lg:flex flex-col gap-4">
               {checklistItems.map((label) => (
                 <li
                   key={label}
-                  className="flex items-center justify-center md:justify-start gap-3"
+                  className="flex items-center justify-center md:justify-start gap-3 item"
                 >
                   <Image
                     src="/check.svg"
@@ -44,13 +76,13 @@ export default function Built() {
             </ul>
           </div>
 
-          <div className="relative flex-1 mx-auto w-full md:w-auto">
+          <div className="relative flex-1 mx-auto w-full md:w-auto step-cards">
             <div className="pointer-events-none absolute left-0 right-0 top-1/2 hidden -translate-y-1/2 border-t border-dashed border-[rgba(14,100,102,0.4)] lg:block" />
             <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
               {cards.map((card) => (
                 <div
                   key={card.n}
-                  className="relative flex flex-col gap-4 overflow-hidden justify-between rounded-card border border-dashed border-[rgba(14,100,102,0.4)] bg-white pb-px pt-6 px-px"
+                  className="card relative flex flex-col gap-4 overflow-hidden justify-between rounded-card border border-dashed border-[rgba(14,100,102,0.4)] bg-white pb-px pt-6 px-px"
                 >
                   <div className="relative z-10 px-6">
                     <p className="text-md font-bold text-heading">

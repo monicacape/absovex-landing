@@ -23,6 +23,7 @@ export default function Home() {
 
     const words = gsap.utils.toArray<HTMLElement>(".word-animate");
     const lines = gsap.utils.toArray<HTMLElement>(".line-animate");
+    const srubs = gsap.utils.toArray<HTMLElement>(".scrub-animate");
 
     words.forEach((el) => {
       const split = new SplitText(el, { type: "words", mask: "words" });
@@ -35,7 +36,7 @@ export default function Home() {
         stagger: 0.06,
         scrollTrigger: {
           trigger: el,
-          start: "top 85%",
+          start: "top 65%",
           toggleActions: "play none none none",
         },
       });
@@ -52,9 +53,24 @@ export default function Home() {
         stagger: 0.06,
         scrollTrigger: {
           trigger: el,
-          start: "top 85%",
+          start: "top 65%",
           toggleActions: "play none none none",
         },
+      });
+    });
+
+    srubs.forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top bottom",
+          end: "center 80%",
+          scrub: true,
+        },
+        y: 32,
+        opacity: 0,
+        ease: "none",
+        stagger: 0.4,
       });
     });
   });
