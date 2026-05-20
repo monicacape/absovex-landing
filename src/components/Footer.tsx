@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import FinalCTA from "@/components/Home/FinalCTA";
+import { useImageMagnet } from "@/hooks/useImageMagnet";
 
 const navLinks = {
   Product: [
@@ -22,6 +25,7 @@ const navLinks = {
 };
 
 export default function Footer() {
+  useImageMagnet();
   return (
     <div className="container">
       <FinalCTA></FinalCTA>

@@ -6,11 +6,8 @@ import Why29 from "@/components/Home/Why29";
 import FAQ from "@/components/Home/FAQ";
 import Built from "@/components/Home/Built";
 import Insights from "@/components/Home/Insights";
-// import { useImageMagnet } from "@/hooks/useImageMagnet";
 
 export default function Home() {
-  // useImageMagnet();
-
   // useGSAP(() => {
   //   const words = gsap.utils.toArray<HTMLElement>(".word-animate");
   //   const lines = gsap.utils.toArray<HTMLElement>(".line-animate");
