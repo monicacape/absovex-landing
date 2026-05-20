@@ -19,14 +19,16 @@ const paragraphs = [
 export default function DisclaimerPage() {
   return (
     <div className="container py-16 lg:py-24 max-w-content-sm">
-      <h1 className="mb-3">Disclaimer</h1>
-      <p className="text-sm text-muted mb-10">Effective Date: June 2026</p>
-      <div className="flex flex-col gap-6">
-        {paragraphs.map((text, i) => (
-          <p key={i} className="text-base leading-8 text-muted">
-            {text}
-          </p>
-        ))}
+      <div className="max-w-3/4 mx-auto">
+        <h1 className="mb-3 text-accent">Disclaimer</h1>
+        <p className="text-sm text-muted mb-10">Effective Date: June 2026</p>
+        <div className="flex flex-col gap-6">
+          {paragraphs.map((text, i) => (
+            <p key={i} className="text-base leading-8 text-muted">
+              {text}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );

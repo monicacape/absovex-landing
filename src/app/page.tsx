@@ -1,130 +1,108 @@
-"use client";
-
 import Hero from "@/components/Home/Hero";
 import Statistics from "@/components/Home/Statistics";
 import WhatYouGet from "@/components/Home/WhatYouGet";
 import PinkAbsorb from "@/components/PinkAbsorb";
 import Why29 from "@/components/Home/Why29";
 import FAQ from "@/components/Home/FAQ";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import SplitText from "gsap/SplitText";
 import Built from "@/components/Home/Built";
 import Insights from "@/components/Home/Insights";
-import { useEffect } from "react";
-import { useImageMagnet } from "@/hooks/useImageMagnet";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
+// import { useImageMagnet } from "@/hooks/useImageMagnet";
 
 export default function Home() {
-  useImageMagnet();
+  // useImageMagnet();
 
-  useEffect(() => {
-    const doRefresh = () =>
-      requestAnimationFrame(() =>
-        requestAnimationFrame(() => ScrollTrigger.refresh()),
-      );
-    if (document.readyState === "complete") {
-      doRefresh();
-    } else {
-      window.addEventListener("load", doRefresh);
-      return () => window.removeEventListener("load", doRefresh);
-    }
-  }, []);
+  // useGSAP(() => {
+  //   const words = gsap.utils.toArray<HTMLElement>(".word-animate");
+  //   const lines = gsap.utils.toArray<HTMLElement>(".line-animate");
+  //   const srubs = gsap.utils.toArray<HTMLElement>(".scrub-animate");
 
-  useGSAP(() => {
-    const words = gsap.utils.toArray<HTMLElement>(".word-animate");
-    const lines = gsap.utils.toArray<HTMLElement>(".line-animate");
-    const srubs = gsap.utils.toArray<HTMLElement>(".scrub-animate");
+  //   words.forEach((el) => {
+  //     const split = new SplitText(el, { type: "words", mask: "words" });
 
-    words.forEach((el) => {
-      const split = new SplitText(el, { type: "words", mask: "words" });
+  //     gsap.from(split.words, {
+  //       opacity: 0,
+  //       y: 20,
+  //       duration: 0.6,
+  //       ease: "power2.out",
+  //       stagger: 0.06,
+  //       scrollTrigger: {
+  //         trigger: el,
+  //         start: "top 65%",
+  //         toggleActions: "play none none none",
+  //       },
+  //     });
+  //   });
 
-      gsap.from(split.words, {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        ease: "power2.out",
-        stagger: 0.06,
-        scrollTrigger: {
-          trigger: el,
-          start: "top 65%",
-          toggleActions: "play none none none",
-        },
-      });
-    });
+  //   lines.forEach((el) => {
+  //     const split = new SplitText(el, { type: "lines", mask: "lines" });
 
-    lines.forEach((el) => {
-      const split = new SplitText(el, { type: "lines", mask: "lines" });
+  //     gsap.from(split.lines, {
+  //       opacity: 0,
+  //       y: 20,
+  //       duration: 0.6,
+  //       ease: "power2.out",
+  //       stagger: 0.06,
+  //       scrollTrigger: {
+  //         trigger: el,
+  //         start: "top 65%",
+  //         toggleActions: "play none none none",
+  //       },
+  //     });
+  //   });
 
-      gsap.from(split.lines, {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        ease: "power2.out",
-        stagger: 0.06,
-        scrollTrigger: {
-          trigger: el,
-          start: "top 65%",
-          toggleActions: "play none none none",
-        },
-      });
-    });
+  //   srubs.forEach((el) => {
+  //     gsap.from(el, {
+  //       scrollTrigger: {
+  //         trigger: el,
+  //         start: "top bottom",
+  //         end: "center 60%",
+  //         scrub: true,
+  //         invalidateOnRefresh: true,
+  //       },
+  //       y: 32,
+  //       opacity: 0,
+  //       ease: "none",
+  //       stagger: 0.4,
+  //     });
+  //   });
 
-    srubs.forEach((el) => {
-      gsap.from(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: "top bottom",
-          end: "center 60%",
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
-        y: 32,
-        opacity: 0,
-        ease: "none",
-        stagger: 0.4,
-      });
-    });
+  //   gsap.from(".pink-absorb", {
+  //     scrollTrigger: {
+  //       trigger: ".pink-absorb",
+  //       start: "top center",
+  //       scrub: true,
+  //       invalidateOnRefresh: true,
+  //     },
+  //     y: -200,
+  //     ease: "none",
+  //     stagger: 0.4,
+  //   });
 
-    gsap.from(".pink-absorb", {
-      scrollTrigger: {
-        trigger: ".pink-absorb",
-        start: "top center",
-        scrub: true,
-        invalidateOnRefresh: true,
-      },
-      y: -200,
-      ease: "none",
-      stagger: 0.4,
-    });
+  //   gsap.to(".green-absorb", {
+  //     scrollTrigger: {
+  //       trigger: ".green-absorb",
+  //       start: "top center",
+  //       scrub: true,
+  //       invalidateOnRefresh: true,
+  //     },
+  //     y: 200,
+  //     ease: "none",
+  //     stagger: 0.4,
+  //   });
 
-    gsap.to(".green-absorb", {
-      scrollTrigger: {
-        trigger: ".green-absorb",
-        start: "top center",
-        scrub: true,
-        invalidateOnRefresh: true,
-      },
-      y: 200,
-      ease: "none",
-      stagger: 0.4,
-    });
-
-    gsap.from(".final-cta", {
-      scrollTrigger: {
-        trigger: ".final-cta",
-        start: "top bottom",
-        end: "center 80%",
-        scrub: true,
-        invalidateOnRefresh: true,
-      },
-      y: 100,
-      opacity: 0.4,
-      ease: "none",
-    });
-  });
+  //   gsap.from(".final-cta", {
+  //     scrollTrigger: {
+  //       trigger: ".final-cta",
+  //       start: "top bottom",
+  //       end: "center 80%",
+  //       scrub: true,
+  //       invalidateOnRefresh: true,
+  //     },
+  //     y: 100,
+  //     opacity: 0.4,
+  //     ease: "none",
+  //   });
+  // });
 
   return (
     <div className="relative z-10">

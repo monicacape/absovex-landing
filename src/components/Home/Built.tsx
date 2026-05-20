@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -19,33 +21,6 @@ const cards = [
 ];
 
 export default function Built() {
-  useGSAP(() => {
-    gsap.from(".step-cards .card", {
-      opacity: 0,
-      y: 40,
-      duration: 0.6,
-      ease: "power2.out",
-      stagger: 0.06,
-      scrollTrigger: {
-        trigger: ".step-cards",
-        start: "top 65%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    gsap.from(".checklist .item", {
-      opacity: 0,
-      y: 40,
-      duration: 0.6,
-      ease: "power2.out",
-      stagger: 0.06,
-      scrollTrigger: {
-        trigger: ".checklist",
-        start: "top 65%",
-        toggleActions: "play none none none",
-      },
-    });
-  });
   return (
     <section className="bg-icon-bg -mx-10 px-10 lg:px-14">
       <div className="container py-16">
