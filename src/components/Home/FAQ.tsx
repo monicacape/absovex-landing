@@ -1,9 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useEffect, useState } from "react";
+import { gsap } from "gsap";
 import EyebrowBadge from "@/components/EyebrowBadge";
 
-const faqs = [
+type Faq = { question: string; answer: string | null };
+
+const faqs: Faq[] = [
   {
     question: "What do I get for $29?",
     answer:
@@ -65,41 +68,195 @@ const faqs = [
   },
 ];
 
-function ToggleIcon({ open }: { open: boolean }) {
-  return open ? (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      className="shrink-0"
-    >
-      <circle cx="12" cy="12" r="12" fill="#0f8a8d" />
-      <path
-        d="M8 12h8"
-        stroke="white"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  ) : (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      className="shrink-0"
-    >
-      <circle cx="12" cy="12" r="11" stroke="#0f8a8d" strokeWidth="1" />
-      <path
-        d="M12 8v8M8 12h8"
-        stroke="#0f8a8d"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
+function FAQItem({
+  faq,
+  isOpen,
+  onToggle,
+}: {
+  faq: Faq;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const circleFillRef = useRef<SVGCircleElement>(null);
+  const hLineWhiteRef = useRef<SVGPathElement>(null);
+  const vLineRef = useRef<SVGPathElement>(null);
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    const body = bodyRef.current;
+    const circleFill = circleFillRef.current;
+    const hLineWhite = hLineWhiteRef.current;
+    const vLine = vLineRef.current;
+
+    // On mount: set initial state without animation
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      if (body)
+        gsap.set(body, {
+          height: isOpen && faq.answer ? "auto" : 0,
+          opacity: isOpen ? 1 : 0,
+        });
+      if (circleFill)
+        gsap.set(circleFill, {
+          opacity: isOpen ? 1 : 0,
+          scale: isOpen ? 1 : 0,
+          transformOrigin: "50% 50%",
+        });
+      if (hLineWhite) gsap.set(hLineWhite, { opacity: isOpen ? 1 : 0 });
+      if (vLine)
+        gsap.set(vLine, {
+          scaleY: isOpen ? 0 : 1,
+          opacity: isOpen ? 0 : 1,
+          transformOrigin: "50% 50%",
+        });
+      return;
+    }
+
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const d = reduced ? 0 : 1;
+
+    if (isOpen) {
+      // Expand body
+      if (body && faq.answer) {
+        gsap.killTweensOf(body);
+        gsap.fromTo(
+          body,
+          { height: 0, opacity: 0 },
+          { height: "auto", opacity: 1, duration: 0.38 * d, ease: "power2.out" },
+        );
+      }
+      // Icon: fill circle pops in, vertical line collapses, white h-line fades in
+      if (circleFill) {
+        gsap.killTweensOf(circleFill);
+        gsap.to(circleFill, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.28 * d,
+          ease: "back.out(1.4)",
+          transformOrigin: "50% 50%",
+        });
+      }
+      if (vLine) {
+        gsap.killTweensOf(vLine);
+        gsap.to(vLine, {
+          scaleY: 0,
+          opacity: 0,
+          duration: 0.18 * d,
+          ease: "power2.in",
+          transformOrigin: "50% 50%",
+        });
+      }
+      if (hLineWhite) {
+        gsap.killTweensOf(hLineWhite);
+        gsap.to(hLineWhite, {
+          opacity: 1,
+          duration: 0.15 * d,
+          delay: 0.1 * d,
+        });
+      }
+    } else {
+      // Collapse body
+      if (body && faq.answer) {
+        gsap.killTweensOf(body);
+        gsap.to(body, {
+          height: 0,
+          opacity: 0,
+          duration: 0.25 * d,
+          ease: "power2.in",
+        });
+      }
+      // Icon: fill circle shrinks, vertical line expands, white h-line fades out
+      if (circleFill) {
+        gsap.killTweensOf(circleFill);
+        gsap.to(circleFill, {
+          opacity: 0,
+          scale: 0,
+          duration: 0.2 * d,
+          ease: "power2.in",
+          transformOrigin: "50% 50%",
+        });
+      }
+      if (vLine) {
+        gsap.killTweensOf(vLine);
+        gsap.to(vLine, {
+          scaleY: 1,
+          opacity: 1,
+          duration: 0.22 * d,
+          ease: "power2.out",
+          transformOrigin: "50% 50%",
+        });
+      }
+      if (hLineWhite) {
+        gsap.killTweensOf(hLineWhite);
+        gsap.to(hLineWhite, { opacity: 0, duration: 0.1 * d });
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
+  return (
+    <div className="card flex flex-col rounded-card border border-stroke-subtle bg-white/60 px-8 py-6 shadow-card-lg backdrop-blur self-start scrub-animate">
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        className="flex w-full items-start justify-between gap-4 text-left"
+        onClick={onToggle}
+      >
+        <span className="text-lg font-bold leading-6 text-heading">
+          {faq.question}
+        </span>
+
+        {/* Icon: layered SVG — circles and lines are independently animated */}
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+          className="mt-0.5 shrink-0"
+        >
+          {/* Teal outline circle — always visible */}
+          <circle cx="12" cy="12" r="11" stroke="#0f8a8d" strokeWidth="1" />
+          {/* Teal h-line — always visible, shown when closed */}
+          <path
+            d="M8 12h8"
+            stroke="#0f8a8d"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+          {/* Teal v-line — GSAP scaleY 1→0 on open */}
+          <path
+            ref={vLineRef}
+            d="M12 8v8"
+            stroke="#0f8a8d"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+          {/* Filled circle — GSAP scale 0→1 on open, sits above lines */}
+          <circle ref={circleFillRef} cx="12" cy="12" r="12" fill="#0f8a8d" />
+          {/* White h-line — GSAP opacity 0→1 on open, sits above filled circle */}
+          <path
+            ref={hLineWhiteRef}
+            d="M8 12h8"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+        </svg>
+      </button>
+
+      {/* Answer body — always in DOM, height animated by GSAP */}
+      <div ref={bodyRef} style={{ overflow: "hidden" }}>
+        {faq.answer && (
+          <p className="pt-4 text-base leading-6 text-muted whitespace-pre-line">
+            {faq.answer}
+          </p>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -109,7 +266,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="flex flex-col items-center gap-10 py-12 md:py-20 relatize z-20"
+      className="relative z-20 flex flex-col items-center gap-10 py-12 md:py-20"
     >
       {/* Header */}
       <div className="flex max-w-content-sm flex-col items-center gap-5 text-center">
@@ -130,27 +287,12 @@ export default function FAQ() {
       {/* 2-column accordion grid */}
       <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2">
         {faqs.map((faq, i) => (
-          <div
+          <FAQItem
             key={faq.question}
-            className="card flex flex-col gap-4 rounded-card border border-stroke-subtle bg-white/60 px-8 py-6 shadow-card-lg backdrop-blur self-start scrub-animate"
-          >
-            <button
-              type="button"
-              aria-expanded={open === i}
-              className="flex w-full items-start justify-between gap-4 text-left"
-              onClick={() => setOpen(open === i ? -1 : i)}
-            >
-              <span className="text-lg font-bold leading-6 text-heading">
-                {faq.question}
-              </span>
-              <ToggleIcon open={open === i} />
-            </button>
-            {open === i && faq.answer && (
-              <p className="text-base leading-6 text-muted whitespace-pre-line">
-                {faq.answer}
-              </p>
-            )}
-          </div>
+            faq={faq}
+            isOpen={open === i}
+            onToggle={() => setOpen(open === i ? -1 : i)}
+          />
         ))}
       </div>
     </section>

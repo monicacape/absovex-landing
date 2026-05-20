@@ -43,6 +43,7 @@ All tokens live in `src/app/globals.css`. No tailwind.config.js exists.
 ### Blur
 - `--blur-button`: 6px → `blur-button`
 - `--blur-subtle`: 4px → `blur-subtle`
+- `--blur-glow`: 80px → `blur-glow` (large ambient glow blobs)
 
 ### Font size extensions
 - `--font-size-32`: 2rem → `text-32`
@@ -51,6 +52,9 @@ All tokens live in `src/app/globals.css`. No tailwind.config.js exists.
 - `--spacing-13`: 3.25rem → `mt-13`, `pt-13`, etc.
 - `--spacing-15`: 3.75rem
 - `--spacing-icon-pad`: 1.125rem
+
+### Size tokens
+- `--size-glow-teal`: 26.25rem (420px) → `size-glow-teal` (GreenAbsorb glow blob diameter)
 
 ### Width tokens
 - `--width-content-sm`: 43.375rem → `max-w-content-sm`
@@ -72,6 +76,13 @@ All tokens live in `src/app/globals.css`. No tailwind.config.js exists.
 
 ### Scale
 - `--scale-108`: 1.08
+
+## @utility (animation)
+- `animate-glow-pulse`: glow-pulse 2.8s ease-in-out infinite alternate — opacity 0.15→0.30 (tuned for pink #f2188f)
+- `animate-glow-pulse-teal`: glow-pulse-teal 2.8s ease-in-out infinite alternate — opacity 0.25→0.50 (tuned for teal #0f8a8d which is darker and needs higher opacity)
+- `animate-spin-slow`: spin-slow 18s linear infinite
+- `animate-spin-slow-reverse`: spin-slow-reverse 28s linear infinite
+- All four are suppressed under `prefers-reduced-motion: reduce` via plain CSS class selectors
 
 ## @utility
 - `.rounded-card`: border-radius: 14px → `rounded-card`

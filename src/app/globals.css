@@ -44,6 +44,9 @@
 
   --blur-button: 6px;
   --blur-subtle: 4px;
+  --blur-glow: 80px;
+
+  --size-glow-teal: 26.25rem;
 
   --spacing-13: 3.25rem;
   --spacing-15: 3.75rem;
@@ -90,6 +93,51 @@
 
 @utility top-nav {
   padding-top: var(--height-nav);
+}
+
+@keyframes glow-pulse {
+  from { opacity: 0.15; }
+  to   { opacity: 0.3; }
+}
+
+@keyframes glow-pulse-teal {
+  from { opacity: 0.25; }
+  to   { opacity: 0.5; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow-reverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@utility animate-glow-pulse {
+  animation: glow-pulse 2.8s ease-in-out infinite alternate;
+}
+
+@utility animate-glow-pulse-teal {
+  animation: glow-pulse-teal 2.8s ease-in-out infinite alternate;
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+@utility animate-spin-slow-reverse {
+  animation: spin-slow-reverse 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-glow-pulse,
+  .animate-glow-pulse-teal,
+  .animate-spin-slow,
+  .animate-spin-slow-reverse {
+    animation: none;
+  }
 }
 
 html {

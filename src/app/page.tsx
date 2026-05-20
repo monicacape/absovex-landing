@@ -64,7 +64,7 @@ export default function Home() {
         scrollTrigger: {
           trigger: el,
           start: "top bottom",
-          end: "center 80%",
+          end: "center 60%",
           scrub: true,
         },
         y: 32,
@@ -72,6 +72,28 @@ export default function Home() {
         ease: "none",
         stagger: 0.4,
       });
+    });
+
+    gsap.from(".pink-absorb", {
+      scrollTrigger: {
+        trigger: ".pink-absorb",
+        start: "top center",
+        scrub: true,
+      },
+      y: -200,
+      ease: "none",
+      stagger: 0.4,
+    });
+
+    gsap.to(".green-absorb", {
+      scrollTrigger: {
+        trigger: ".green-absorb",
+        start: "top center",
+        scrub: true,
+      },
+      y: 200,
+      ease: "none",
+      stagger: 0.4,
     });
   });
 
