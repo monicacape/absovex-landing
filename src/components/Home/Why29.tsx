@@ -41,7 +41,6 @@ const cards = [
 
 export default function Why29() {
   useGSAP(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     gsap.from(".doctor", {
       opacity: 0,
       x: 80,
@@ -111,7 +110,7 @@ export default function Why29() {
           <div
             key={card.title}
             data-magnet-zone
-            className="border border-stroke-subtle rounded-card overflow-hidden relative flex flex-col gap-8"
+            className="border border-stroke-subtle rounded-card overflow-hidden relative flex flex-col gap-8 scrub-animate"
           >
             <div className="flex flex-row gap-4 relative z-10 pt-8 px-6">
               <div className="bg-icon-bg border border-icon-border rounded-lg flex items-center justify-center shrink-0 size-15">
@@ -143,7 +142,7 @@ export default function Why29() {
                 alt=""
                 width={card.imgW}
                 height={card.imgH}
-                className="image-magnet w-full top-0 max-w-[480px] h-auto imgs-animate"
+                className="image-magnet w-full top-0 max-w-[480px] h-auto"
               />
             </div>
           </div>

@@ -23,7 +23,6 @@ export default function Navigation() {
 
   useGSAP(
     () => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       gsap.from(navRef.current, {
         y: -20,
         opacity: 0,

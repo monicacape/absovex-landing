@@ -267,6 +267,7 @@ export default function GreenAbsorb() {
             alt=""
             width={628}
             height={628}
+            priority
           />
           <Image
             src="/green-pills-2.png"
@@ -274,6 +275,7 @@ export default function GreenAbsorb() {
             alt=""
             width={628}
             height={628}
+            priority
           />
         </div>
       </div>

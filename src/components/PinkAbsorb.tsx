@@ -249,6 +249,7 @@ export default function GreenAbsorb() {
           alt=""
           width={1092}
           height={1092}
+          priority
           className="absolute inset-0 w-full h-full animate-spin-slow"
         />
         <Image
@@ -256,6 +257,7 @@ export default function GreenAbsorb() {
           alt=""
           width={1092}
           height={1092}
+          priority
           className="absolute inset-0 w-full h-full animate-spin-slow-reverse"
         />
       </div>

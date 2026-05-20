@@ -3,8 +3,6 @@ import { useGSAP } from "@gsap/react";
 
 export function useImageMagnet() {
   useGSAP(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
     const targets = gsap.utils.toArray<HTMLElement>(".image-magnet");
     const cleanups: (() => void)[] = [];
 

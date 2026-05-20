@@ -113,11 +113,7 @@ function FAQItem({
         });
       return;
     }
-
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    const d = reduced ? 0 : 1;
+    const d = 1;
 
     if (isOpen) {
       // Expand body

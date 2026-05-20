@@ -20,7 +20,6 @@ const cards = [
 
 export default function Built() {
   useGSAP(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     gsap.from(".step-cards .card", {
       opacity: 0,
       y: 40,
@@ -77,8 +76,7 @@ export default function Built() {
           </div>
 
           <div className="relative flex-1 mx-auto w-full md:w-auto step-cards">
-            <div className="pointer-events-none absolute left-0 right-0 top-1/2 hidden -translate-y-1/2 border-t border-dashed border-[rgba(14,100,102,0.4)] lg:block" />
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-3 relative z-10">
               {cards.map((card) => (
                 <div
                   key={card.n}
@@ -102,6 +100,7 @@ export default function Built() {
                 </div>
               ))}
             </div>
+            <div className="pointer-events-none absolute left-0 right-0 top-1/2 hidden -translate-y-1/2 border-t border-dashed border-[rgba(14,100,102,0.4)] lg:block card z-0" />
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import Hero from "@/components/Home/Hero";
 import Statistics from "@/components/Home/Statistics";
 import WhatYouGet from "@/components/Home/WhatYouGet";
+import PinkAbsorb from "@/components/PinkAbsorb";
 import Why29 from "@/components/Home/Why29";
 import FAQ from "@/components/Home/FAQ";
 import gsap from "gsap";
@@ -11,6 +12,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
 import Built from "@/components/Home/Built";
 import Insights from "@/components/Home/Insights";
+import { useEffect } from "react";
 import { useImageMagnet } from "@/hooks/useImageMagnet";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
@@ -18,16 +20,23 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 export default function Home() {
   useImageMagnet();
 
-  useGSAP(() => {
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (prefersReduced) return;
+  useEffect(() => {
+    const doRefresh = () =>
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => ScrollTrigger.refresh()),
+      );
+    if (document.readyState === "complete") {
+      doRefresh();
+    } else {
+      window.addEventListener("load", doRefresh);
+      return () => window.removeEventListener("load", doRefresh);
+    }
+  }, []);
 
+  useGSAP(() => {
     const words = gsap.utils.toArray<HTMLElement>(".word-animate");
     const lines = gsap.utils.toArray<HTMLElement>(".line-animate");
     const srubs = gsap.utils.toArray<HTMLElement>(".scrub-animate");
-    const imgs = gsap.utils.toArray<HTMLElement>(".imgs-animate");
 
     words.forEach((el) => {
       const split = new SplitText(el, { type: "words", mask: "words" });
@@ -70,23 +79,10 @@ export default function Home() {
           start: "top bottom",
           end: "center 60%",
           scrub: true,
+          invalidateOnRefresh: true,
         },
         y: 32,
         opacity: 0,
-        ease: "none",
-        stagger: 0.4,
-      });
-    });
-
-    imgs.forEach((el) => {
-      gsap.from(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: "top bottom",
-          end: "center 60%",
-          scrub: true,
-        },
-        y: 50,
         ease: "none",
         stagger: 0.4,
       });
@@ -97,6 +93,7 @@ export default function Home() {
         trigger: ".pink-absorb",
         start: "top center",
         scrub: true,
+        invalidateOnRefresh: true,
       },
       y: -200,
       ease: "none",
@@ -108,10 +105,24 @@ export default function Home() {
         trigger: ".green-absorb",
         start: "top center",
         scrub: true,
+        invalidateOnRefresh: true,
       },
       y: 200,
       ease: "none",
       stagger: 0.4,
+    });
+
+    gsap.from(".final-cta", {
+      scrollTrigger: {
+        trigger: ".final-cta",
+        start: "top bottom",
+        end: "center 80%",
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+      y: 100,
+      opacity: 0.4,
+      ease: "none",
     });
   });
 
@@ -121,6 +132,9 @@ export default function Home() {
       <div className="container">
         <Statistics />
         <Why29 />
+        <div className="relative -z-10">
+          <PinkAbsorb></PinkAbsorb>
+        </div>
         <WhatYouGet />
       </div>
       <Built />

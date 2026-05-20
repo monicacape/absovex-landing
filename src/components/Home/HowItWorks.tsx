@@ -44,7 +44,6 @@ const steps = [
 
 export default function HowItWorks() {
   useGSAP(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     gsap.from(".how-cards .card", {
       opacity: 0,
       y: 40,

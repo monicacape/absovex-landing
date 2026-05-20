@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import SmoothScroll from "@/components/SmoothScroll";
+import PDFModalController from "@/components/PDFModalController";
 import "./globals.css";
 import Footer from "@/components/Footer";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
     >
       <body className="flex flex-col">
         <Navigation />
+        <PDFModalController />
         <SmoothScroll />
         <div id="smooth-wrapper">
           <div id="smooth-content" className="min-h-page">

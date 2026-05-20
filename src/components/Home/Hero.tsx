@@ -12,17 +12,8 @@ gsap.registerPlugin(useGSAP);
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
-
   useGSAP(
     () => {
-      const prefersReduced = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
-      if (prefersReduced) {
-        gsap.set(document.body, { opacity: 1 });
-        return;
-      }
-
       gsap.to(document.body, { opacity: 1, duration: 0.4, ease: "power2.out" });
 
       gsap.from(".hero-image", {
@@ -119,7 +110,11 @@ export default function Hero() {
             <Button href="#" showArrow>
               See My Timing Conflicts
             </Button>
-            <Button href="#" variant="pink">
+            <Button
+              href="#"
+              variant="pink"
+              onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent("open-pdf-modal")); }}
+            >
               View Sample Report
             </Button>
           </div>
@@ -165,5 +160,6 @@ export default function Hero() {
         </div>
       </div>
     </section>
+
   );
 }

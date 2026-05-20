@@ -1,30 +1,7 @@
-"use client";
-
-import Image from "next/image";
 import Button from "@/components/Button";
 import GreenAbsorb from "../GreenAbsorb";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 export default function FinalCTA() {
-  useGSAP(() => {
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (prefersReduced) return;
-    gsap.from(".final-cta", {
-      scrollTrigger: {
-        trigger: ".final-cta",
-        start: "top bottom",
-        end: "center 80%",
-        scrub: true,
-      },
-      y: 100,
-      opacity: 0.4,
-      ease: "none",
-      stagger: 0.4,
-    });
-  });
   return (
     <section className="relative">
       <GreenAbsorb></GreenAbsorb>

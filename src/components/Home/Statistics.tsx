@@ -64,10 +64,6 @@ const agencies = [
 ];
 
 export default function Statistics() {
-  useGSAP(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  });
-
   return (
     <section
       id="why-timing-matters"
