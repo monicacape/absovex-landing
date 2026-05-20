@@ -15,7 +15,9 @@ export default function Hero() {
 
   useGSAP(
     () => {
-      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
       if (prefersReduced) {
         gsap.set(document.body, { opacity: 1 });
         return;
@@ -62,7 +64,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="hero relative flex flex-col lg:flex-row items-center justify-between gap-12 pt-14 px-6 lg:px-12 overflow-hidden bg-warm rounded-2xl pb-16 lg:pb-20"
+      className="hero relative flex flex-col items-center justify-between gap-12 pt-14 px-6 lg:px-12 overflow-hidden bg-warm rounded-2xl pb-8 lg:pb-20"
     >
       <div
         aria-hidden="true"
@@ -83,8 +85,8 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 shadow-inner-warm"
       />
 
-      <div className="container grid grid-cols-12 items-center gap-12">
-        <div className="col-span-12 lg:col-span-7 relative z-10 flex flex-col items-start">
+      <div className="container grid grid-cols-12 items-center gap-y-4">
+        <div className="col-span-12 lg:col-span-6 xl:col-span-7 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
           <EyebrowBadge
             className="scrub mb-3"
             label="Try Now"
@@ -105,52 +107,53 @@ export default function Hero() {
             so everything works together, not against each other.
           </p>
 
-          <div className="scrub flex flex-col sm:flex-row gap-6 items-start mt-8">
+          <div className="scrub flex flex-col sm:flex-row gap-x-6 gap-y-3 items-start mt-8 flex-wrap">
             <Button href="#" showArrow>
               See My Timing Conflicts
             </Button>
-            <Button href="#" variant="secondary">
+            <Button href="#" variant="pink">
               View Sample Report
             </Button>
           </div>
-
-          <div className="scrub flex flex-nowrap gap-4 mt-10 w-full">
-            {trustBadges.map((badge) => (
-              <div
-                key={badge.bold}
-                className="bg-white rounded-card px-4 py-3 drop-shadow-card flex items-center gap-3 flex-1"
-              >
-                <div className="bg-icon-bg border border-icon-border rounded-lg flex items-center justify-center shrink-0 size-10">
-                  <Image
-                    src={badge.icon}
-                    alt=""
-                    width={badge.width}
-                    height={badge.height}
-                    className={
-                      "imgClassName" in badge ? badge.imgClassName : undefined
-                    }
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="flex flex-col text-xs leading-4 text-accent">
-                  <span className="font-bold">{badge.bold}</span>
-                  <span className="font-normal">{badge.sub}</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
-        <div className="col-span-12 lg:col-span-5 relative z-10 overflow-visible">
+        <div className="col-span-12 lg:col-span-5 relative z-10 overflow-visible mx-auto">
           <Image
             src="/hero/hero.png"
             alt="Absovex timing report"
             width={568}
             height={558}
-            className="rounded-2xl"
-            style={{ minWidth: "568px", width: "100%", height: "auto" }}
+            className="rounded-2xl max-w-[820px] lg:max-w-none lg:min-w-[568px] w-full h-auto -mb-10 lg:mb-0"
             priority
           />
+        </div>
+      </div>
+
+      <div className="container relative z-10">
+        <div className="scrub flex flex-nowrap md:flex-row flex-col gap-4 -mt-6 xl:-mt-10">
+          {trustBadges.map((badge) => (
+            <div
+              key={badge.bold}
+              className="bg-white rounded-card px-4 py-3 drop-shadow-card flex items-center gap-3 flex-1 lg:max-w-[230px]"
+            >
+              <div className="bg-icon-bg border border-icon-border rounded-lg flex items-center justify-center shrink-0 size-10">
+                <Image
+                  src={badge.icon}
+                  alt=""
+                  width={badge.width}
+                  height={badge.height}
+                  className={
+                    "imgClassName" in badge ? badge.imgClassName : undefined
+                  }
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="flex flex-col text-xs leading-4 text-accent">
+                <span className="font-bold">{badge.bold}</span>
+                <span className="font-normal">{badge.sub}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

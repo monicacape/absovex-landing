@@ -73,7 +73,7 @@ export default function Navigation() {
         <div className="flex items-center justify-end gap-3">
           {/* CTA — hidden on mobile */}
           <div className="hidden md:block">
-            <Button href="#" showArrow hideShadow>
+            <Button href="#" size="small" showArrow hideShadow>
               Get My $29 Report
             </Button>
           </div>
@@ -137,7 +137,12 @@ export default function Navigation() {
               </li>
             ))}
           </ul>
-          <Button href="#" showArrow onClick={() => setMenuOpen(false)}>
+          <Button
+            href="#"
+            size="small"
+            showArrow
+            onClick={() => setMenuOpen(false)}
+          >
             Get My $29 Report
           </Button>
         </div>
