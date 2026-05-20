@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Disclaimer — Absovex",
-  description: "Read the Absovex disclaimer regarding educational use, medical advice, and liability.",
+  description:
+    "Read the Absovex disclaimer regarding educational use, medical advice, and liability.",
 };
 
 const paragraphs = [

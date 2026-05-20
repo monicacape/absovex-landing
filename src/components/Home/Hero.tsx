@@ -14,8 +14,6 @@ export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
   useGSAP(
     () => {
-      gsap.to(document.body, { opacity: 1, duration: 0.4, ease: "power2.out" });
-
       gsap.from(".hero-image", {
         x: 120,
         opacity: 0,

@@ -9,6 +9,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export default function SmoothScroll() {
   useLayoutEffect(() => {
+    gsap.to(document.body, { opacity: 1, duration: 0.4, ease: "power2.out" });
+
     const smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
