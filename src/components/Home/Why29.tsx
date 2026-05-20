@@ -51,7 +51,7 @@ export default function Why29() {
               height={589}
               className="hidden lg:block self-start justify-self-end pointer-events-none absolute right-0 bottom-0"
             />
-            <div className="flex flex-col justify-between gap-10 lg:max-w-1/2 items-center text-center lg:text-left lg:items-start">
+            <div className="flex flex-col justify-between gap-10 lg:max-w-2/3 items-center text-center lg:text-left lg:items-start">
               <div className="flex flex-col gap-5">
                 <div className="flex justify-center lg:justify-start">
                   <EyebrowBadge label="Why It's Worth $29" />
@@ -109,13 +109,13 @@ export default function Why29() {
                 </p>
               </div>
             </div>
-            <div className="overflow-hidden relative bg-cream-bg px-6 pt-6 flex-1">
+            <div className="overflow-hidden flex justify-center lg:justify-end relative bg-cream-bg px-6 pt-6 flex-1 items-center">
               <Image
                 src={card.img}
                 alt=""
                 width={card.imgW}
                 height={card.imgH}
-                className="w-full top-0"
+                className="w-full top-0 max-w-[480px] h-auto"
               />
             </div>
           </div>
