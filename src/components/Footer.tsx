@@ -12,7 +12,7 @@ const navLinks = {
   Company: [
     { label: "Disclaimer", href: "/disclaimer" },
     { label: "Terms of Service", href: "/terms-of-service" },
-    { label: "Privacy Policy", href: "#privacy" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
   ],
   Socials: [
     { label: "Facebook", href: "#facebook" },
