@@ -5,7 +5,7 @@ export default function FinalCTA() {
     <section className="relative">
       {/* Banner card */}
       <div
-        className="relative overflow-hidden xl:rounded-3xl bg-cover bg-center final-cta"
+        className="relative overflow-hidden 2xl:rounded-3xl bg-cover bg-center final-cta"
         style={{ backgroundImage: "url('/footer.png')" }}
       >
         {/* Content — offset right to make room for paper */}

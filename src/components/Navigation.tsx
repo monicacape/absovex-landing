@@ -4,8 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/Button";
 import { useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 gsap.registerPlugin(useGSAP);
 
@@ -20,6 +22,18 @@ const links = [
 export default function Navigation() {
   const navRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    if (pathname === "/") {
+      ScrollSmoother.get()?.scrollTo(href, true);
+      history.pushState(null, "", href);
+    } else {
+      router.push("/" + href);
+    }
+  };
 
   useGSAP(
     () => {
@@ -61,6 +75,7 @@ export default function Navigation() {
               <Link
                 href={href}
                 className="text-sm font-medium text-heading transition-opacity hover:opacity-70"
+                onClick={(e) => handleNavClick(e, href)}
               >
                 {label}
               </Link>
@@ -129,7 +144,7 @@ export default function Navigation() {
                 <Link
                   href={href}
                   className="text-2xl font-medium text-heading transition-opacity hover:opacity-70"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => { handleNavClick(e, href); setMenuOpen(false); }}
                 >
                   {label}
                 </Link>

@@ -61,7 +61,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="hero relative flex flex-col items-center justify-between gap-12 pt-14 px-6 lg:px-12 overflow-hidden bg-warm rounded-2xl pb-8 lg:pb-20"
+      className="hero relative flex flex-col items-center justify-between gap-12 pt-14 px-6 lg:px-8 overflow-hidden bg-warm rounded-2xl pb-8 lg:pb-20"
     >
       <div
         aria-hidden="true"
@@ -127,13 +127,13 @@ export default function Hero() {
             alt="Absovex timing report"
             width={568}
             height={558}
-            className="rounded-2xl max-w-[820px] lg:max-w-none lg:min-w-[640px] w-full h-auto -mb-10 lg:mb-0 hero-image relative -left-10"
+            className="rounded-2xl max-w-[820px] lg:max-w-none xl:min-w-[640px] w-full h-auto -mb-10 lg:mb-0 hero-image relative"
             priority
           />
         </div>
       </div>
 
-      <div className="container relative z-10 xl:-mt-20">
+      <div className="container relative z-10 2xl:-mt-20">
         <div className="scrub flex flex-nowrap md:flex-row flex-col gap-4 -mt-6 xl:-mt-10 relative xl:-top-4">
           {trustBadges.map((badge) => (
             <div

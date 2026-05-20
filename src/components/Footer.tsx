@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import FinalCTA from "@/components/Home/FinalCTA";
 
 const navLinks = {
@@ -63,12 +64,12 @@ export default function Footer() {
                 <ul className="flex flex-col gap-2">
                   {links.map(({ label, href }) => (
                     <li key={label}>
-                      <a
+                      <Link
                         href={href}
                         className="text-sm leading-6 text-muted hover:text-heading transition-colors"
                       >
                         {label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
