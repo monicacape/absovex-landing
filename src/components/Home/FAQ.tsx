@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import EyebrowBadge from "@/components/EyebrowBadge";
 
@@ -271,18 +272,33 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative z-20 flex flex-col items-center gap-10 py-12 md:py-20"
+      className="relative z-20 flex flex-col lg:flex-row items-start gap-10 py-12 md:py-20"
     >
       {/* Header */}
-      <div className="flex max-w-content-sm flex-col items-center gap-5 text-center">
+      <div className="flex max-w-content-sm flex-col items-center lg:items-start gap-5 text-center lg:text-left flex-3 mx-auto">
         <EyebrowBadge label="FAQ" />
-        <div className="flex flex-col items-center gap-5">
+        <div className="flex flex-col items-center lg:items-start gap-5">
           <h2 className="word-animate">
             Questions before you
             <br className="hidden lg:block" />
             <span className="text-accent-muted">check out</span>
           </h2>
-          <p className="line-animate text-lg font-medium leading-8 text-muted">
+          <p className="text-lg font-medium leading-8 text-muted text-center lg:text-left">
+            A few practical details about your report, privacy, and what happens
+            if your routine changes.
+          </p>
+        </div>
+        <div className="flex items-center gap-6 rounded-card bg-icon-bg px-8 py-6">
+          <div className="flex size-[54px] shrink-0 items-center justify-center rounded-full bg-accent">
+            <Image
+              src="/icons/mail.svg"
+              alt=""
+              width={20}
+              height={18}
+              aria-hidden="true"
+            />
+          </div>
+          <p className="flex-1 text-base font-medium leading-7 text-muted">
             A few practical details about your report, privacy, and what happens
             if your routine changes.
           </p>
@@ -290,7 +306,7 @@ export default function FAQ() {
       </div>
 
       {/* 2-column accordion grid */}
-      <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className="grid w-full grid-cols-1 gap-5 flex-4">
         {faqs.map((faq, i) => (
           <FAQItem
             key={faq.question}

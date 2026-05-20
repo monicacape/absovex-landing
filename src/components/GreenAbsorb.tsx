@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function GreenAbsorb() {
   return (
-    <div className="absolute shrink-0 aspect-square -left-120 -top-160 scale-[1] green-absorb">
+    <div className="absolute shrink-0 aspect-square -left-120 -top-280 scale-[1] green-absorb">
       <div className="relative isolate">
         <div
           aria-hidden="true"
