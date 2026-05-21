@@ -20,6 +20,11 @@ useImageMagnet — applies GSAP magnetic repulsion + scale to every `.image-magn
 
 **How to apply:** New home-page section components go in `Home/`. New shared UI primitives stay at the root. Use `@/components/Home/X` imports for sections, `@/components/X` for primitives.
 
+**PDF rendering pattern:**
+- `PDFModal.tsx` (root) — modal shell; uses `next/dynamic` with `ssr: false` to lazy-load `PDFViewer`
+- `PDFViewer.tsx` (root) — contains all `react-pdf` imports and pdfjs worker config; must stay a separate file so the dynamic import boundary prevents pdfjs-dist from running during SSR/static generation (pdfjs uses `DOMMatrix` which does not exist in Node.js)
+- `react-pdf@10.4.1` is installed; pdfjs-dist is its peer dep and ships its own worker at `pdfjs-dist/build/pdf.worker.min.mjs`
+
 **Non-obvious facts:**
 - `Footer.tsx` (a root component) imports `FinalCTA` from `@/components/Home/FinalCTA` — watch for this when touching either file.
 - `WhyTrust` is imported nowhere (dead import was removed from page.tsx). The component exists in `Home/WhyTrust.tsx` but is not rendered on the page.
