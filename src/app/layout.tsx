@@ -12,8 +12,11 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Absovex",
-  description: "Built with Next.js, TypeScript, Tailwind CSS, and GSAP",
+  title: {
+    default: "Absovex — Personalized Supplement & Medication Timing",
+    template: "%s | Absovex",
+  },
+  description: "Absovex analyzes your supplements and medications to build a personalized timing plan — so everything works together.",
 };
 
 export default function RootLayout({

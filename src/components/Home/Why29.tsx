@@ -41,6 +41,9 @@ const cards = [
 
 export default function Why29() {
   useGSAP(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
     gsap.from(".doctor", {
       opacity: 0,
       x: 80,
@@ -57,7 +60,7 @@ export default function Why29() {
   return (
     <section
       id="why-29"
-      className="flex flex-col gap-10 relatize z-10 py-12 lg:py-20"
+      className="flex flex-col gap-10 relative z-10 py-12 lg:py-20"
     >
       <div className="grid">
         <div className="col-start-1 row-start-1">

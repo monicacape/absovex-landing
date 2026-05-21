@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 const checklistItems = [
   "Medication and supplement timing rules",
@@ -58,7 +56,7 @@ export default function Built() {
                   className="card relative flex flex-col gap-4 overflow-hidden justify-between rounded-card border border-dashed border-[rgba(14,100,102,0.4)] bg-white pb-px pt-6 px-px"
                 >
                   <div className="relative z-10 px-6">
-                    <p className="text-md font-bold text-heading">
+                    <p className="text-base font-bold text-heading">
                       <span className="mr-1">{card.n}.</span>
                       {card.title}
                     </p>

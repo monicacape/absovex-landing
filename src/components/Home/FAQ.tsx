@@ -179,8 +179,7 @@ export default function FAQ() {
             />
           </div>
           <p className="flex-1 text-base font-medium leading-7 text-muted">
-            You can also join our update list for future improvements and beta
-            testing opportunities.
+            Have more questions? We&apos;re happy to help.
           </p>
         </div>
       </div>

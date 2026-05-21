@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function GreenAbsorb() {
   return (
-    <div className="absolute shrink-0 aspect-square -left-120 -z-10 top-100 scale-[1] green-absorb">
+    <div className="absolute shrink-0 aspect-square -left-120 -z-10 top-100 scale-100 green-absorb">
       <div className="relative isolate">
         <div
           aria-hidden="true"
-          className="animate-glow-pulse-teal absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-glow-teal rounded-full bg-accent blur-glow z-0"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-glow-teal rounded-full bg-accent blur-glow z-0"
         />
         <div className="relative z-10">
           <svg

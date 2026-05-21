@@ -38,30 +38,19 @@ export default function PDFModal({ onClose }: PDFModalProps) {
       }}
       role="dialog"
       aria-modal="true"
-      aria-label="Sample report PDF"
+      aria-labelledby="pdf-modal-title"
     >
       <div className="relative w-full max-w-5xl md:h-modal bg-white rounded-2xl overflow-hidden shadow-2xl">
-        {/* Close button */}
+        <h2 id="pdf-modal-title" className="sr-only">Sample Report</h2>
         <button
           ref={closeBtnRef}
           type="button"
-          aria-label="Close dialog"
+          aria-label="Close sample report"
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 flex items-center justify-center size-9 rounded-full bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-heading/40 cursor-pointer"
+          className="absolute top-3 right-3 z-10 rounded-full bg-black/50 p-1.5 text-white hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-white"
         >
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M1 1L13 13M13 1L1 13"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 

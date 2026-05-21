@@ -14,6 +14,9 @@ export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
   useGSAP(
     () => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
       gsap.from(".hero-image", {
         x: 120,
         opacity: 0,
@@ -83,7 +86,7 @@ export default function Hero() {
       />
 
       <div className="container grid grid-cols-12 items-center gap-y-4">
-        <div className="col-span-12 lg:col-span-6 xl:col-span-7 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left relative xl:-top-14">
+        <div className="col-span-12 lg:col-span-6 xl:col-span-7 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left xl:-top-14">
           <EyebrowBadge
             className="scrub mb-3"
             label="Try Now"

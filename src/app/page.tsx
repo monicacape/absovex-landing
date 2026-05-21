@@ -1,12 +1,16 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Home/Hero";
 import Statistics from "@/components/Home/Statistics";
 import WhatYouGet from "@/components/Home/WhatYouGet";
 import PinkAbsorb from "@/components/PinkAbsorb";
 import Why29 from "@/components/Home/Why29";
-import WhyFeatures from "@/components/Home/WhyFeatures";
 import FAQ from "@/components/Home/FAQ";
 import Built from "@/components/Home/Built";
 import Insights from "@/components/Home/Insights";
+
+export const metadata: Metadata = {
+  title: { absolute: "Absovex — Personalized Supplement & Medication Timing" },
+};
 
 export default function Home() {
   return (

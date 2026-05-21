@@ -21,7 +21,7 @@ export default function FinalCTA() {
               </p>
             </div>
 
-            <div className="flex flex-wrap flex-col items-center gap-5 items-center justify-center">
+            <div className="flex flex-wrap flex-col items-center gap-5 justify-center">
               <div className="relative">
                 <div className="absolute -bottom-2 left-2.5 right-2.5 h-3 rounded-full bg-accent-dark blur-button" />
                 <Button

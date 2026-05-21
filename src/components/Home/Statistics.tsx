@@ -1,7 +1,5 @@
 "use client";
 
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import EyebrowBadge from "@/components/EyebrowBadge";
 

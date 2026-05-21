@@ -25,6 +25,9 @@ export default function Navigation() {
 
   useGSAP(
     () => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
       gsap.from(navRef.current, {
         y: -20,
         opacity: 0,
@@ -50,7 +53,6 @@ export default function Navigation() {
               width={138}
               height={32}
               priority
-              unoptimized
               className="w-logo xl:w-logo-xl"
             />
           </Link>

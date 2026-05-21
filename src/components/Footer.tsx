@@ -36,41 +36,10 @@ export default function Footer() {
   const handleNavClick = useNavClick();
 
   useGSAP(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
     const srubs = gsap.utils.toArray<HTMLElement>(".scrub-animate");
-
-    // words.forEach((el) => {
-    //   const split = new SplitText(el, { type: "words", mask: "words" });
-
-    //   gsap.from(split.words, {
-    //     opacity: 0,
-    //     y: 20,
-    //     duration: 0.6,
-    //     ease: "power2.out",
-    //     stagger: 0.06,
-    //     scrollTrigger: {
-    //       trigger: el,
-    //       start: "top 65%",
-    //       toggleActions: "play none none none",
-    //     },
-    //   });
-    // });
-
-    // lines.forEach((el) => {
-    //   const split = new SplitText(el, { type: "lines", mask: "lines" });
-
-    //   gsap.from(split.lines, {
-    //     opacity: 0,
-    //     y: 20,
-    //     duration: 0.6,
-    //     ease: "power2.out",
-    //     stagger: 0.06,
-    //     scrollTrigger: {
-    //       trigger: el,
-    //       start: "top 65%",
-    //       toggleActions: "play none none none",
-    //     },
-    //   });
-    // });
 
     srubs.forEach((el) => {
       gsap.from(el, {
@@ -87,30 +56,6 @@ export default function Footer() {
         stagger: 0.4,
       });
     });
-
-    // gsap.from(".pink-absorb", {
-    //   scrollTrigger: {
-    //     trigger: ".pink-absorb",
-    //     start: "top center",
-    //     scrub: true,
-    //     invalidateOnRefresh: true,
-    //   },
-    //   y: -200,
-    //   ease: "none",
-    //   stagger: 0.4,
-    // });
-
-    // gsap.to(".green-absorb", {
-    //   scrollTrigger: {
-    //     trigger: ".green-absorb",
-    //     start: "top center",
-    //     scrub: true,
-    //     invalidateOnRefresh: true,
-    //   },
-    //   y: 200,
-    //   ease: "none",
-    //   stagger: 0.4,
-    // });
 
     gsap.from(".final-cta", {
       scrollTrigger: {

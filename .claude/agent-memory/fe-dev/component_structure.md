@@ -23,4 +23,5 @@ useImageMagnet — applies GSAP magnetic repulsion + scale to every `.image-magn
 **Non-obvious facts:**
 - `Footer.tsx` (a root component) imports `FinalCTA` from `@/components/Home/FinalCTA` — watch for this when touching either file.
 - `WhyTrust` is imported nowhere (dead import was removed from page.tsx). The component exists in `Home/WhyTrust.tsx` but is not rendered on the page.
+- `WhyFeatures` was also a dead import in `page.tsx` — removed 2026-05-21.
 - macOS case-insensitive filesystem: renaming `home/` → `Home/` requires a two-step move through a temp name (`mv home home_tmp && mv home_tmp Home`).
