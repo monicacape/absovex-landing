@@ -26,8 +26,8 @@ const navLinks = {
     { label: "Privacy Policy", href: "/privacy-policy" },
   ],
   Socials: [
-    { label: "Facebook", href: "#facebook" },
-    { label: "Instagram", href: "#instagram" },
+    { label: "Facebook", href: "https://www.instagram.com/absovexapp/" },
+    { label: "Instagram", href: "https://www.linkedin.com/company/absovex" },
   ],
 };
 
@@ -77,7 +77,7 @@ export default function Footer() {
         scrollTrigger: {
           trigger: el,
           start: "top bottom",
-          end: "center 60%",
+          end: "center 90%",
           scrub: true,
           invalidateOnRefresh: true,
         },
@@ -141,7 +141,7 @@ export default function Footer() {
                   <span className="mt-1 inline-flex mr-2 size-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
                     !
                   </span>
-                  <strong className="font-bold">Medical Disclaimer: </strong>
+                  <strong className="font-bold">Disclaimer: </strong>
                   Absovex provides educational information only. It does not
                   replace medical advice, diagnosis, treatment, or your
                   physician or pharmacist. Always consult a qualified healthcare

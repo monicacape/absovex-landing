@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import EyebrowBadge from "@/components/EyebrowBadge";
 import GreenAbsorb from "../GreenAbsorb";
 
-type Faq = { question: string; answer: string | null };
+type Faq = { question: string; answer: ReactNode | null };
 
 const faqs: Faq[] = [
   {
@@ -49,8 +49,19 @@ const faqs: Faq[] = [
   },
   {
     question: "Can I send feedback or suggest improvements?",
-    answer:
-      "Yes. User feedback is welcome, especially while Absovex continues improving. You can share what worked, what felt confusing, or what features you would like to see next by sending us an email at: feedback@absovex.com",
+    answer: (
+      <>
+        Yes. User feedback is welcome, especially while Absovex continues
+        improving. You can share what worked, what felt confusing, or what
+        features you would like to see next by sending us an email at:{" "}
+        <a
+          href="mailto:team@absovex.com"
+          className="text-accent underline underline-offset-2 hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+        >
+          team@absovex.com
+        </a>
+      </>
+    ),
   },
   {
     question: "What if I take prescription medications?",
@@ -149,7 +160,7 @@ export default function FAQ() {
         <div className="flex flex-col items-center lg:items-start gap-5">
           <h2 className="word-animate">
             Questions before you
-            <br className="hidden lg:block" />
+            <br className="hidden lg:block" />{" "}
             <span className="text-accent-muted">check out</span>
           </h2>
           <p className="text-lg font-medium leading-8 text-muted text-center lg:text-left">

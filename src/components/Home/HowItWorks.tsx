@@ -65,7 +65,7 @@ export default function HowItWorks() {
         <div className="flex flex-col items-center gap-5">
           <h2 className="word-animate">
             Tell us what you take.
-            <br className="hidden lg:block" />
+            <br className="hidden lg:block" />{" "}
             <span className="text-accent">We sort out the rest.</span>
           </h2>
           <p className="line-animate text-lg font-medium leading-8 text-muted split-animate">

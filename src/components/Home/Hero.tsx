@@ -133,7 +133,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="container relative z-10 2xl:-mt-20">
+      <div className="container relative z-10 mt-4 lg:mt-0 2xl:-mt-20">
         <div className="scrub flex flex-nowrap md:flex-row flex-col gap-4 -mt-6 xl:-mt-10 relative xl:-top-4">
           {trustBadges.map((badge) => (
             <div

@@ -61,8 +61,7 @@ export default function Insights() {
         <EyebrowBadge label="Insights" />
         <div className="flex flex-col items-center gap-5">
           <h2 className="word-animate">
-            Examples of insights
-            <br className="hidden lg:block" />
+            Examples of insights <br className="hidden lg:block" />{" "}
             <span className="text-accent">Absovex uncovers</span>
           </h2>
           <p className="line-animate text-lg font-medium leading-8 text-muted">

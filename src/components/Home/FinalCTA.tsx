@@ -14,8 +14,7 @@ export default function FinalCTA() {
             <div className="flex flex-col gap-2 text-white text-center items-center justify-center lg:text-left">
               <h2 className="text-white text-center word-animate">
                 Stop guessing how to take
-                <br className="hidden lg:block" />
-                everything together.
+                <br className="hidden lg:block" /> everything together.
               </h2>
               <p className="text-lg font-medium leading-8 text-white/90 line-animate">
                 Get your personalized Health Stack Optimized Report now.

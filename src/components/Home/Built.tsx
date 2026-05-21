@@ -25,7 +25,7 @@ export default function Built() {
     <section className="bg-icon-bg -mx-10 px-10 lg:px-14">
       <div className="container py-16">
         <div className="flex flex-col items-start gap-10 lg:flex-row">
-          <div className="flex shrink-0 flex-col gap-5 w-full lg:w-auto text-center md:text-left checklist">
+          <div className="flex shrink-0 flex-col gap-5 w-full lg:w-auto text-left checklist">
             <h3 className="text-accent word-animate">
               How your report is built
             </h3>
@@ -33,7 +33,7 @@ export default function Built() {
               {checklistItems.map((label) => (
                 <li
                   key={label}
-                  className="flex items-center justify-center md:justify-start gap-3 item"
+                  className="flex justify-center justify-start gap-3 item"
                 >
                   <Image
                     src="/check.svg"

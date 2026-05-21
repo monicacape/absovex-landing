@@ -10,7 +10,7 @@ export default function WhyTrust() {
         <div className="flex flex-col gap-5">
           <h2 className="word-animate">
             Quick to complete.
-            <br className="hidden lg:block" />
+            <br className="hidden lg:block" />{" "}
             <span className="text-accent">Private by design.</span>
           </h2>
 

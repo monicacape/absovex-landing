@@ -54,7 +54,7 @@ export default function WhatYouGet() {
         <div className="flex flex-col items-center gap-5">
           <h2 className="word-animate">
             One report.
-            <br className="hidden lg:block" />
+            <br className="hidden lg:block" />{" "}
             <span className="text-accent">Clear answers.</span>
           </h2>
           <p className="line-animate text-lg font-medium leading-8 text-muted">
