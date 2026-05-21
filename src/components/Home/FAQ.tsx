@@ -51,15 +51,19 @@ const faqs: Faq[] = [
     question: "Can I send feedback or suggest improvements?",
     answer: (
       <>
-        Yes. User feedback is welcome, especially while Absovex continues
-        improving. You can share what worked, what felt confusing, or what
-        features you would like to see next by sending us an email at:{" "}
+        Yes. User feedback helps shape future improvements to Absovex. You can
+        share suggestions, report confusing areas, or request features through
+        our{" "}
         <a
-          href="mailto:team@absovex.com"
-          className="text-accent underline underline-offset-2 hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+          href="https://tally.so/r/81Rzpo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline text-accent"
         >
-          team@absovex.com
+          feedback form
         </a>
+        . You can also choose to join our update list for future releases and
+        beta testing opportunities.
       </>
     ),
   },
@@ -168,7 +172,12 @@ export default function FAQ() {
             if your routine changes.
           </p>
         </div>
-        <div className="flex items-center gap-6 rounded-card bg-icon-bg px-8 py-6">
+        <a
+          href="https://tally.so/r/81Rzpo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-5 rounded-card bg-icon-bg px-7 py-6 hover:scale-101 transition"
+        >
           <div className="flex size-[54px] shrink-0 items-center justify-center rounded-full bg-accent">
             <Image
               src="/icons/mail.svg"
@@ -178,10 +187,15 @@ export default function FAQ() {
               aria-hidden="true"
             />
           </div>
-          <p className="flex-1 text-base font-medium leading-7 text-muted">
-            Have more questions? We&apos;re happy to help.
+          <p className="flex-1 text-sm font-medium leading-7">
+            Help shape future Absovex improvements and features.
+            <br />
+            <span className="text-xs text-muted leading-5 block">
+              Questions, ideas, or feedback. You can also join our update list
+              for future releases and beta testing opportunities.
+            </span>
           </p>
-        </div>
+        </a>
       </div>
 
       {/* 2-column accordion grid */}

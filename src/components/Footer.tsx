@@ -36,7 +36,9 @@ export default function Footer() {
   const handleNavClick = useNavClick();
 
   useGSAP(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (prefersReduced) return;
 
     const srubs = gsap.utils.toArray<HTMLElement>(".scrub-animate");
@@ -96,8 +98,13 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm leading-6 text-muted text-center md:text-left">
-              © 2026 ABSOVEX is operated by Extra You, Inc. All rights reserved.
-              Contact Us
+              © 2026 ABSOVEX is operated by Extra You, Inc. All rights reserved.{" "}
+              <a
+                href="mailto:team@absovex.com"
+                className="text-accent hover:underline"
+              >
+                Contact Us
+              </a>
             </p>
           </div>
 
