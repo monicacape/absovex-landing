@@ -3,14 +3,14 @@ import EyebrowBadge from "@/components/EyebrowBadge";
 
 const items = [
   {
-    img: "/insights/1.png",
+    img: "/insights/1.webp",
     iconBg: "bg-icon-bg",
     iconBorder: "border-icon-border",
     title: "Iron + Coffee",
     description: "Coffee may reduce how much iron your body absorbs.",
   },
   {
-    img: "/insights/2.png",
+    img: "/insights/2.webp",
     iconBg: "bg-icon-bg-purple",
     iconBorder: "border-icon-border-purple",
     title: "Magnesium + Thyroid Medication",
@@ -18,7 +18,7 @@ const items = [
       "These often need spacing so they do not compete for absorption.",
   },
   {
-    img: "/insights/3.png",
+    img: "/insights/3.webp",
     iconBg: "bg-cream-bg",
     iconBorder: "border-border-amber",
     title: "Vitamin D Without Food",
@@ -26,7 +26,7 @@ const items = [
       "Fat-soluble vitamins absorb better when paired with dietary fat.",
   },
   {
-    img: "/insights/4.png",
+    img: "/insights/4.webp",
     iconBg: "bg-icon-bg-blue",
     iconBorder: "border-icon-border-blue",
     title: "Multiple Pills, Same Time",
@@ -34,14 +34,14 @@ const items = [
       "Spacing items apart may improve comfort, absorption, and routine fit.",
   },
   {
-    img: "/insights/5.png",
+    img: "/insights/5.webp",
     iconBg: "bg-icon-bg-rose",
     iconBorder: "border-icon-border-rose",
     title: "Calcium + Certain Medications",
     description: "Calcium can interfere with how some medications absorb.",
   },
   {
-    img: "/insights/6.png",
+    img: "/insights/6.webp",
     iconBg: "bg-icon-bg",
     iconBorder: "border-icon-border",
     title: "Evening Support Supplements",

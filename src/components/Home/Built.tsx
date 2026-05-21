@@ -15,9 +15,9 @@ const checklistItems = [
 ];
 
 const cards = [
-  { n: 1, title: "Before vs After Breakdown", img: "/how/built-1.png" },
-  { n: 2, title: "Optimized Daily Schedule", img: "/how/built-2.png" },
-  { n: 3, title: "Daily Timing Card", img: "/how/built-3.png" },
+  { n: 1, title: "Before vs After Breakdown", img: "/how/built-1.webp" },
+  { n: 2, title: "Optimized Daily Schedule", img: "/how/built-2.webp" },
+  { n: 3, title: "Daily Timing Card", img: "/how/built-3.webp" },
 ];
 
 export default function Built() {

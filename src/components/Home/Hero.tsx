@@ -67,7 +67,7 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 max-w-container-max mx-auto z-0 bg-no-repeat"
         style={{
-          backgroundImage: "url('/lines.png')",
+          backgroundImage: "url('/lines.webp')",
           backgroundSize: "contain",
           backgroundPosition: "top center",
         }}
@@ -123,7 +123,7 @@ export default function Hero() {
 
         <div className="col-span-12 lg:col-span-6 xl:col-span-5 relative z-10 overflow-visible mx-auto">
           <Image
-            src="/hero/hero.png"
+            src="/hero/hero.webp"
             alt="Absovex timing report"
             width={568}
             height={558}

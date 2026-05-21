@@ -262,7 +262,7 @@ export default function GreenAbsorb() {
         </div>
         <div className="absolute inset-0">
           <Image
-            src="/green-pills-1.png"
+            src="/green-pills-1.webp"
             className="z-10 absolute inset-0 w-full h-full animate-spin-slow"
             alt=""
             width={628}
@@ -270,7 +270,7 @@ export default function GreenAbsorb() {
             priority
           />
           <Image
-            src="/green-pills-2.png"
+            src="/green-pills-2.webp"
             className="z-10 absolute inset-0 w-full h-full animate-spin-slow-reverse"
             alt=""
             width={628}

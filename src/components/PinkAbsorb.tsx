@@ -241,7 +241,7 @@ export default function GreenAbsorb() {
 
       <div className="absolute inset-0">
         <Image
-          src="/pink-pills-1.png"
+          src="/pink-pills-1.webp"
           alt=""
           width={1092}
           height={1092}
@@ -249,7 +249,7 @@ export default function GreenAbsorb() {
           className="absolute inset-0 w-full h-full animate-spin-slow"
         />
         <Image
-          src="/pink-pills-2.png"
+          src="/pink-pills-2.webp"
           alt=""
           width={1092}
           height={1092}

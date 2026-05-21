@@ -45,7 +45,7 @@ export default function Navigation() {
         <div>
           <Link href="/" className="shrink-0">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Absovex"
               width={138}
               height={32}
@@ -75,7 +75,12 @@ export default function Navigation() {
         <div className="flex items-center justify-end gap-3">
           {/* CTA — hidden on mobile */}
           <div className="hidden md:block">
-            <Button href="https://app.absovex.com/" size="small" showArrow hideShadow>
+            <Button
+              href="https://app.absovex.com/"
+              size="small"
+              showArrow
+              hideShadow
+            >
               Get My $29 Report
             </Button>
           </div>
@@ -132,7 +137,10 @@ export default function Navigation() {
                 <Link
                   href={href}
                   className="text-2xl font-medium text-heading transition-opacity hover:opacity-70"
-                  onClick={(e) => { handleNavClick(e, href); setMenuOpen(false); }}
+                  onClick={(e) => {
+                    handleNavClick(e, href);
+                    setMenuOpen(false);
+                  }}
                 >
                   {label}
                 </Link>

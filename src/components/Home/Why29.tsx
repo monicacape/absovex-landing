@@ -13,7 +13,7 @@ const cards = [
     iconH: 26,
     title: "Personalized Timing Analysis",
     desc: "We look at your meals, drinks, supplements, and medications to help identify possible timing conflicts.",
-    img: "/why/why-1.png",
+    img: "/why/why-1.webp",
     imgW: 350,
     imgH: 236,
   },
@@ -23,7 +23,7 @@ const cards = [
     iconH: 32,
     title: "Provider Conversation Prompts",
     desc: "Your report includes questions you can bring to your doctor or pharmacist based on your actual routine.",
-    img: "/why/why-2.png",
+    img: "/why/why-2.webp",
     imgW: 350,
     imgH: 236,
   },
@@ -33,7 +33,7 @@ const cards = [
     iconH: 24,
     title: "Privacy First",
     desc: "No account required. Your information is used to generate your report and is not stored, sold, or shared.",
-    img: "/why/why-3.png",
+    img: "/why/why-3.webp",
     imgW: 350,
     imgH: 236,
   },
@@ -63,10 +63,10 @@ export default function Why29() {
         <div className="col-start-1 row-start-1">
           <div
             className="bg-warm rounded-card px-8 py-10 bg-cover relative scrub-animate"
-            style={{ backgroundImage: "url('/cream-bg.png')" }}
+            style={{ backgroundImage: "url('/cream-bg.webp')" }}
           >
             <Image
-              src="/doctor.png"
+              src="/doctor.webp"
               alt=""
               width={392}
               height={589}

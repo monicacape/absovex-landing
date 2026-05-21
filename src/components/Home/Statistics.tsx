@@ -34,28 +34,28 @@ const stats = [
 
 const agencies = [
   {
-    logo: "/agencies/fda.png",
+    logo: "/agencies/fda.webp",
     logoW: 40,
     logoH: 48,
     name: "openFDA",
     sub: "Live Drug Database",
   },
   {
-    logo: "/agencies/rxnorm.png",
+    logo: "/agencies/rxnorm.webp",
     logoW: 47,
     logoH: 48,
     name: "RxNorm",
     sub: "Standardized Drug Names",
   },
   {
-    logo: "/agencies/dailymed.png",
+    logo: "/agencies/dailymed.webp",
     logoW: 105,
     logoH: 40,
     name: "DailyMed",
     sub: "Official Drug Information",
   },
   {
-    logo: "/agencies/nih.png",
+    logo: "/agencies/nih.webp",
     logoW: 64,
     logoH: 40,
     name: "National Institutes of Health",

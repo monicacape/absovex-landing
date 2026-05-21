@@ -6,7 +6,7 @@ export default function FinalCTA() {
       {/* Banner card */}
       <div
         className="relative overflow-hidden 2xl:rounded-3xl bg-cover bg-center final-cta"
-        style={{ backgroundImage: "url('/footer.png')" }}
+        style={{ backgroundImage: "url('/footer.webp')" }}
       >
         {/* Content — offset right to make room for paper */}
         <div className="relative z-10 flex items-center justify-end py-12">

@@ -135,7 +135,7 @@ export default function Footer() {
           {/* Left: logo + disclaimer + copyright */}
           <div className="flex flex-col justify-between gap-12 flex-1 h-auto">
             <div className="flex flex-col items-center text-center md:items-start md:text-left gap-5">
-              <Image src="/logo.png" alt="Absovex" width={138} height={32} />
+              <Image src="/logo.webp" alt="Absovex" width={138} height={32} />
               <div className="flex items-start gap-3 md:pr-20">
                 <p className="text-sm leading-6 text-muted">
                   <span className="mt-1 inline-flex mr-2 size-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
