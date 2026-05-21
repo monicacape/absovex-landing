@@ -77,6 +77,7 @@ export default function Navigation() {
           <div className="hidden md:block">
             <Button
               href="https://app.absovex.com/"
+              target="_blank"
               size="small"
               showArrow
               hideShadow
@@ -149,6 +150,7 @@ export default function Navigation() {
           </ul>
           <Button
             href="https://app.absovex.com/"
+            target="_blank"
             size="small"
             showArrow
             onClick={() => setMenuOpen(false)}

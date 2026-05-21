@@ -105,7 +105,7 @@ export default function Hero() {
           </p>
 
           <div className="scrub flex flex-col sm:flex-row gap-x-6 gap-y-3 items-start mt-8 flex-wrap">
-            <Button href="https://app.absovex.com/" showArrow>
+            <Button href="https://app.absovex.com/" target="_blank" showArrow>
               See My Timing Conflicts
             </Button>
             <Button

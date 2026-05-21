@@ -48,11 +48,6 @@ const faqs: Faq[] = [
       "Because this is an instant digital report, all purchases are final. Instant download items are not eligible for returns, exchanges, or cancellations.",
   },
   {
-    question: "Can I join the update list?",
-    answer:
-      "Yes. You can join the Absovex update list to hear about improvements, future versions, and beta testing opportunities. Your email will not be sold or shared. It will only be used for Absovex-related communication.",
-  },
-  {
     question: "Can I send feedback or suggest improvements?",
     answer:
       "Yes. User feedback is welcome, especially while Absovex continues improving. You can share what worked, what felt confusing, or what features you would like to see next by sending us an email at: feedback@absovex.com",
@@ -99,15 +94,28 @@ function FAQItem({
           className="mt-0.5 shrink-0 transition-transform duration-200"
         >
           <circle cx="12" cy="12" r="11" stroke="#0f8a8d" strokeWidth="1" />
-          <path d="M8 12h8" stroke={isOpen ? "white" : "#0f8a8d"} strokeWidth="1.5" strokeLinecap="round" />
+          <path
+            d="M8 12h8"
+            stroke={isOpen ? "white" : "#0f8a8d"}
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
           {!isOpen && (
-            <path d="M12 8v8" stroke="#0f8a8d" strokeWidth="1.5" strokeLinecap="round" />
+            <path
+              d="M12 8v8"
+              stroke="#0f8a8d"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
           )}
+          {isOpen && <circle cx="12" cy="12" r="12" fill="#0f8a8d" />}
           {isOpen && (
-            <circle cx="12" cy="12" r="12" fill="#0f8a8d" />
-          )}
-          {isOpen && (
-            <path d="M8 12h8" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+            <path
+              d="M8 12h8"
+              stroke="white"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
           )}
         </svg>
       </button>
@@ -160,8 +168,8 @@ export default function FAQ() {
             />
           </div>
           <p className="flex-1 text-base font-medium leading-7 text-muted">
-            A few practical details about your report, privacy, and what happens
-            if your routine changes.
+            You can also join our update list for future improvements and beta
+            testing opportunities.
           </p>
         </div>
       </div>

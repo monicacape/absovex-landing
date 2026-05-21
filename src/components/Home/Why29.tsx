@@ -91,7 +91,11 @@ export default function Why29() {
               </div>
               <div className="flex flex-col gap-5 lg:items-start">
                 <div className="flex justify-center items-center w-full lg:w-auto">
-                  <Button href="https://app.absovex.com/" showArrow>
+                  <Button
+                    href="https://app.absovex.com/"
+                    target="_blank"
+                    showArrow
+                  >
                     Get My $29 Report
                   </Button>
                 </div>

@@ -27,6 +27,7 @@ export default function FinalCTA() {
                 <div className="absolute -bottom-2 left-2.5 right-2.5 h-3 rounded-full bg-accent-dark blur-button" />
                 <Button
                   href="https://app.absovex.com/"
+                  target="_blank"
                   variant="pink"
                   showArrow
                   hideShadow
