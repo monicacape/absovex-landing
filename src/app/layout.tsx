@@ -16,7 +16,31 @@ export const metadata: Metadata = {
     default: "Absovex — Personalized Supplement & Medication Timing",
     template: "%s | Absovex",
   },
-  description: "Absovex analyzes your supplements and medications to build a personalized timing plan — so everything works together.",
+  description:
+    "Absovex reviews your daily routine to identify timing conflicts between medications, supplements, food, coffee, and minerals.",
+  openGraph: {
+    title: "Absovex — Personalized Supplement & Medication Timing",
+    description:
+      "Absovex reviews your daily routine to identify timing conflicts between medications, supplements, food, coffee, and minerals.",
+    url: "https://absovex.com",
+    siteName: "Absovex",
+    images: [
+      {
+        url: "https://absovex.com/og.png",
+        width: 1210,
+        height: 638,
+        alt: "Absovex — Personalized Supplement & Medication Timing",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Absovex — Personalized Supplement & Medication Timing",
+    description:
+      "Absovex reviews your daily routine to identify timing conflicts between medications, supplements, food, coffee, and minerals.",
+    images: ["https://absovex.com/og.png"],
+  },
 };
 
 export default function RootLayout({
