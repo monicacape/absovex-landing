@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Read the Absovex Terms of Service governing your use of the platform.",
+  alternates: {
+    canonical: "https://absovex.com/terms-of-service",
+  },
 };
 
 type Section = {

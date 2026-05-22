@@ -41,6 +41,10 @@ export const metadata: Metadata = {
       "Absovex reviews your daily routine to identify timing conflicts between medications, supplements, food, coffee, and minerals.",
     images: ["https://absovex.com/og.png"],
   },
+  metadataBase: new URL("https://absovex.com"),
+  alternates: {
+    canonical: "https://absovex.com",
+  },
 };
 
 export default function RootLayout({

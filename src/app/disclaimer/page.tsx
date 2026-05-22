@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Disclaimer",
   description:
     "Read the Absovex disclaimer regarding educational use, medical advice, and liability.",
+  alternates: {
+    canonical: "https://absovex.com/disclaimer",
+  },
 };
 
 const paragraphs = [

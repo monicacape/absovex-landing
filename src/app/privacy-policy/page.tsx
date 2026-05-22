@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Read the Absovex Privacy Policy explaining how your information is collected, used, and protected.",
+  alternates: {
+    canonical: "https://absovex.com/privacy-policy",
+  },
 };
 
 type Section = {
