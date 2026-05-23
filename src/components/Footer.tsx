@@ -27,7 +27,7 @@ const navLinks = {
   ],
   Socials: [
     {
-      label: "Facebook",
+      label: "LinkedIn",
       href: "https://www.linkedin.com/company/absovex",
     },
     { label: "Instagram", href: "https://www.instagram.com/absovexapp/" },
