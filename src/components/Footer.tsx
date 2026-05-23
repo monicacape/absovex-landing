@@ -26,8 +26,11 @@ const navLinks = {
     { label: "Privacy Policy", href: "/privacy-policy" },
   ],
   Socials: [
-    { label: "Facebook", href: "https://www.instagram.com/absovexapp/" },
-    { label: "Instagram", href: "https://www.linkedin.com/company/absovex" },
+    {
+      label: "Facebook",
+      href: "https://www.linkedin.com/company/absovex",
+    },
+    { label: "Instagram", href: "https://www.instagram.com/absovexapp/" },
   ],
 };
 
