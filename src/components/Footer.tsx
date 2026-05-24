@@ -78,7 +78,7 @@ export default function Footer() {
     ScrollTrigger.refresh();
   });
   return (
-    <div className="container">
+    <div className="container relative z-100">
       <FinalCTA></FinalCTA>
       <footer className="lg:py-20 pt-12 pb-10 px-6">
         <div className="container flex lg:flex-row flex-col-reverse items-stretch justify-between gap-10">
