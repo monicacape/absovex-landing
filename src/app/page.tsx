@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Home/Hero";
-import Statistics from "@/components/Home/Statistics";
+import WhyTimingMatters from "@/components/Home/WhyTimingMatters";
 import WhatYouGet from "@/components/Home/WhatYouGet";
 import PinkAbsorb from "@/components/PinkAbsorb";
 import Why29 from "@/components/Home/Why29";
@@ -128,7 +128,9 @@ export default function Home() {
     <div className="relative z-10">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationSchema),
+        }}
       />
       <script
         type="application/ld+json"
@@ -136,7 +138,7 @@ export default function Home() {
       />
       <Hero />
       <div className="container">
-        <Statistics />
+        <WhyTimingMatters />
         <Why29 />
         <div className="relative -z-10">
           <PinkAbsorb></PinkAbsorb>
