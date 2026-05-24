@@ -71,7 +71,7 @@ export default function Insights() {
       </div>
 
       {/* Grid */}
-      <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
         {items.map((item) => (
           <div
             key={item.title}

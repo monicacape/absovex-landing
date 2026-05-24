@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Navigation from "@/components/Navigation";
-import SmoothScroll from "@/components/SmoothScroll";
 import PDFModalController from "@/components/PDFModalController";
+import {
+  DynamicSmoothScroll,
+  DynamicFooter,
+  DynamicGlobalAnimations,
+} from "@/components/DynamicIslands";
 import "./globals.css";
-import Footer from "@/components/Footer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -60,13 +63,14 @@ export default function RootLayout({
       <body className="flex flex-col">
         <Navigation />
         <PDFModalController />
-        <SmoothScroll />
+        <DynamicSmoothScroll />
+        <DynamicGlobalAnimations />
         <div id="smooth-wrapper">
           <div id="smooth-content" className="min-h-page">
             <main className="flex flex-col flex-1 px-6 lg:px-10 top-nav relative lg:pb-20">
               {children}
             </main>
-            <Footer />
+            <DynamicFooter />
           </div>
         </div>
       </body>

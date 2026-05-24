@@ -11,7 +11,11 @@ metadata:
 Hero, Statistics, WhatYouGet, Why29, WhyTrust, WhyTrust, FAQ, Insights, FinalCTA, ProofStrip, Score, HowItWorks, Built
 
 **`src/components/` root** — shared/primitive components used across the app:
-Button, EyebrowBadge, Navigation, Footer, SmoothScroll, ShaderEffect, GreenAbsorb, PinkAbsorb, LinesLeft, LinesRightBottom, LinesRightTop
+Button, EyebrowBadge, Navigation, Footer, SmoothScroll, ShaderEffect, GreenAbsorb, PinkAbsorb, LinesLeft, LinesRightBottom, LinesRightTop, GlobalAnimations, DynamicIslands
+
+**`src/components/DynamicIslands.tsx`** — `"use client"` file that exports `DynamicSmoothScroll`, `DynamicFooter`, and `DynamicGlobalAnimations` via `next/dynamic` with `ssr: false`. Must be a Client Component because `next/dynamic` with `ssr: false` is forbidden in Server Components. Imported by `src/app/layout.tsx`.
+
+**`src/components/GlobalAnimations.tsx`** — `"use client"` component that mounts once and wires GSAP SplitText scroll animations for every `.word-animate` (words, fade+slide 24px) and `.line-animate` (lines, fade+slide 16px) element on the page. Returns `null`. Loaded via `DynamicGlobalAnimations` so it never runs during SSR.
 
 **`src/hooks/`** — custom React hooks, all starting with `use`:
 useImageMagnet — applies GSAP magnetic repulsion + scale to every `.image-magnet` element; hook is called once in `page.tsx`; target cards mark their hover zone with `data-magnet-zone`.
