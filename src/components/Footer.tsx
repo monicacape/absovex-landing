@@ -30,7 +30,11 @@ const navLinks = {
       label: "LinkedIn",
       href: "https://www.linkedin.com/company/absovex",
     },
-    { label: "Instagram", href: "https://www.instagram.com/absovexapp/" },
+    { label: "Instagram", href: "https://www.instagram.com/absovex.app/" },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61590604313945",
+    },
   ],
 };
 
