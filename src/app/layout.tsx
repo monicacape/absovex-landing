@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Navigation from "@/components/Navigation";
 import PDFModalController from "@/components/PDFModalController";
 import {
@@ -73,6 +74,7 @@ export default function RootLayout({
             <DynamicFooter />
           </div>
         </div>
+        <Analytics />
       </body>
     </html>
   );
